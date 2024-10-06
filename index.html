@@ -4,14 +4,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tyler Bender's Resume Challenge</title>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="websitestyle.css">
     <style>
         /* Global styles */
         * {
             box-sizing: border-box;
         }
         body {
-            font-family: 'Open Sans', sans-serif; /* Matching Webplox font */
+            font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f5f5f5;
@@ -48,24 +48,10 @@
             margin: 0 auto;
             flex-grow: 1;
         }
-        .row {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-            margin-bottom: 40px;
-        }
         .column {
-            box-sizing: border-box;
-        }
-        .text-column {
-            flex: 1;
+            width: 100%;
             padding: 20px;
-        }
-        .image-column {
-            max-width: 400px;
-            flex: 0 0 400px;
+            box-sizing: border-box;
         }
         footer {
             font-size: 1.25rem;
@@ -74,15 +60,15 @@
             text-align: center;
         }
         h1, h2, p {
-            font-weight: 700; /* Making all headers bold */
+            font-weight: bold;
         }
         h1 {
-            font-size: 3rem;
+            font-size: 3.5rem;
             color: #FFFFFF;
             text-align: center;
         }
         h2 {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             color: #333333;
             text-align: center;
         }
@@ -103,6 +89,8 @@
             align-items: center;
             gap: 20px;
             width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
         }
         .vertical-header {
             writing-mode: vertical-rl;
@@ -135,17 +123,23 @@
             margin: 0 auto;
             border-radius: 50%;
             border: 5px solid #333333;
-            width: 300px; /* Increased image size */
-            height: 300px;
+            width: 350px; /* Larger image size */
+            height: 350px;
             object-fit: cover;
             margin-bottom: 20px;
         }
         /* Responsive adjustments */
         @media (max-width: 750px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            h2 {
+                font-size: 2rem;
+            }
             .container {
                 padding: 20px 5px;
             }
-            .row {
+            .skills-projects-container {
                 flex-direction: column;
                 align-items: center;
             }
@@ -159,11 +153,11 @@
                 text-align: left;
             }
             .projects-container {
-                align-items: left;
+                align-items: center;
             }
             .image-column img {
-                width: 350px; /* Increased image size for mobile */
-                height: 350px;
+                width: 300px; /* Reduced image size for smaller mobile screens */
+                height: 300px;
             }
         }
         /* Link styles */
@@ -189,53 +183,51 @@
     </header>
 
     <div class="container" id="about">
-        <div class="row">
-            <div class="image-column">
-                <img src="profile pic.png" alt="Tyler Bender">
-            </div>
-
-            <div class="column text-column">
-                <h2>Cloud Engineer (In Training)</h2>
-                <p><span id="replaceme"></span></p>
-                <p>Aspiring Cloud Engineer with a strong foundation in Python, GitHub, and AWS. Experienced in building and managing cloud infrastructure, focusing on serverless architectures and API integration. Passionate about technical support and optimizing cloud environments for scalability and efficiency. Dedicated to continuous learning in cloud computing.</p>
-            </div>
+        <div class="image-column">
+            <img src="profile pic.png" alt="Tyler Bender">
         </div>
 
-        <div class="separator"></div>
+        <div class="column text-column">
+            <h2>Cloud Engineer (In Training)</h2>
+            <p><span id="replaceme"></span></p>
+            <p>Aspiring Cloud Engineer with a strong foundation in Python, GitHub, and AWS. Experienced in building and managing cloud infrastructure, focusing on serverless architectures and API integration. Passionate about technical support and optimizing cloud environments for scalability and efficiency. Dedicated to continuous learning in cloud computing.</p>
 
-        <div class="skills-projects-container" id="skills">
-            <div class="vertical-header">Skills</div>
-            <div class="skills-container">
-                <ul class="skills-list">
-                    <li>AWS Cloud Services (Lambda, S3, etc.)</li>
-                    <li>Python Programming</li>
-                    <li>SQL Databases</li>
-                    <li>Serverless Architecture</li>
-                    <li>API Development</li>
-                    <li>Technical Support</li>
-                </ul>
-                <ul class="skills-list">
-                    <li>JSON & YAML Syntax</li>
-                    <li>GitHub Version Control</li>
-                    <li>Infrastructure as Code (IaC)</li>
-                    <li>Cloud Computing</li>
-                    <li>Monitoring & Logging (CloudWatch)</li>
-                    <li>Troubleshooting & Debugging</li>
-                </ul>
+            <div class="separator"></div>
+
+            <div class="skills-projects-container" id="skills">
+                <div class="vertical-header">Skills</div>
+                <div class="skills-container">
+                    <ul class="skills-list">
+                        <li>AWS Cloud Services (Lambda, S3, etc.)</li>
+                        <li>Python Programming</li>
+                        <li>SQL Databases</li>
+                        <li>Serverless Architecture</li>
+                        <li>API Development</li>
+                        <li>Technical Support</li>
+                    </ul>
+                    <ul class="skills-list">
+                        <li>JSON & YAML Syntax</li>
+                        <li>GitHub Version Control</li>
+                        <li>Infrastructure as Code (IaC)</li>
+                        <li>Cloud Computing</li>
+                        <li>Monitoring & Logging (CloudWatch)</li>
+                        <li>Troubleshooting & Debugging</li>
+                    </ul>
+                </div>
             </div>
-        </div>
 
-        <div class="separator"></div>
+            <div class="separator"></div>
 
-        <div class="skills-projects-container" id="projects">
-            <div class="vertical-header">Projects</div>
-            <div class="projects-container">
-                <ul class="projects-list">
-                    <li><a href="https://tycloudresume.com/">Cloud Resume Challenge</a></li>
-                    <li><a href="https://webplox.com/">Webplox</a></li>
-                    <li><a href="https://mellonfamilylawncare.com/">Mellon Family Lawn Care</a></li>
-                    <li><a href="https://tricountysealcoating.com/">Tri-County Sealcoating</a></li>
-                </ul>
+            <div class="skills-projects-container" id="projects">
+                <div class="vertical-header">Projects</div>
+                <div class="projects-container">
+                    <ul class="projects-list">
+                        <li><a href="https://tycloudresume.com/">Cloud Resume Challenge</a></li>
+                        <li><a href="https://webplox.com/">Webplox</a></li>
+                        <li><a href="https://mellonfamilylawncare.com/">Mellon Family Lawn Care</a></li>
+                        <li><a href="https://tricountysealcoating.com/">Tri-County Sealcoating</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
@@ -267,18 +259,18 @@
                         if (parsedBody && parsedBody.visitorCount !== undefined) {
                             document.getElementById('replaceme').innerText = `Total Visitors: ${parsedBody.visitorCount}`;
                         } else {
-                            console.log('Unexpected response format or missing visitorCount property');
+                            document.getElementById('replaceme').innerText = 'Error';
+                            console.error('VisitorCount not found in the response');
                         }
                     } catch (error) {
-                        console.error('Error:', error);
+                        console.error('API call error:', error);
                     }
                 }
+
                 updateVisitorCount();
             });
         </script>
-        <div id="visitor-count">
-            <p id="replaceme"></p>
-        </div>
+        <p>Contact: <a href="mailto:tylerbender@webplox.com">tylerbender@webplox.com</a></p>
     </footer>
 
 </body>
