@@ -4,14 +4,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tyler Bender's Resume Challenge</title>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="websitestyle.css">
     <style>
         /* Global styles */
         * {
             box-sizing: border-box;
         }
         body {
-            font-family: 'Open Sans', sans-serif; /* Matching Webplox font */
+            font-family: 'Poppins', sans-serif; /* Changed to match Webplox */
             margin: 0;
             padding: 0;
             background-color: #f5f5f5;
@@ -50,23 +50,16 @@
         }
         .row {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: center; /* Centered content */
+            flex-direction: row;
             align-items: center;
+            justify-content: center;
             width: 100%;
-            margin-bottom: 40px;
         }
         .column {
-            box-sizing: border-box;
-        }
-        .text-column {
-            flex: 1;
+            width: 50%; /* Adjust to your preference */
             padding: 20px;
-            max-width: 600px; /* Limit width for better mobile display */
-        }
-        .image-column {
-            max-width: 400px;
-            flex: 0 0 400px;
+            box-sizing: border-box;
+            text-align: center;
         }
         footer {
             font-size: 1.25rem;
@@ -75,15 +68,15 @@
             text-align: center;
         }
         h1, h2, p {
-            font-weight: 700; /* Making all headers bold */
+            font-weight: bold;
         }
         h1 {
-            font-size: 3rem;
+            font-size: 4rem;
             color: #FFFFFF;
             text-align: center;
         }
         h2 {
-            font-size: 2.5rem;
+            font-size: 3rem;
             color: #333333;
             text-align: center;
         }
@@ -117,7 +110,6 @@
             flex-direction: column;
             justify-content: center;
             flex-grow: 1;
-            max-width: 600px; /* Limit width for better mobile display */
         }
         .skills-list, .projects-list {
             list-style-type: none;
@@ -128,7 +120,6 @@
             font-weight: bold;
             font-size: clamp(1.5rem, 1.5vw, 1.5rem);
             margin-bottom: 5px;
-            text-align: center; /* Center the list items */
         }
         .projects {
             text-align: center;
@@ -138,7 +129,7 @@
             margin: 0 auto;
             border-radius: 50%;
             border: 5px solid #333333;
-            width: 300px; /* Increased image size */
+            width: 300px;
             height: 300px;
             object-fit: cover;
             margin-bottom: 20px;
@@ -149,22 +140,12 @@
                 padding: 20px 5px;
             }
             .row {
-                flex-direction: column;
+                flex-direction: column; /* Stack the image and text on mobile */
                 align-items: center;
             }
-            .vertical-header {
-                text-align: center;
-                transform: rotate(0deg);
-                writing-mode: horizontal-tb;
-                margin-bottom: 10px;
-            }
             .image-column img {
-                width: 350px; /* Increased image size for mobile */
-                height: 350px;
-            }
-            .text-column {
-                padding: 10px; /* Adjust padding for mobile */
-                text-align: center; /* Center text in text column */
+                width: 250px; /* Adjusted for mobile */
+                height: 250px;
             }
         }
         /* Link styles */
@@ -266,17 +247,21 @@
                         const parsedBody = JSON.parse(data.body);
             
                         if (parsedBody && parsedBody.visitorCount !== undefined) {
-                            document.getElementById("replaceme").innerText = `This site has had ${parsedBody.visitorCount} visitors!`;
+                            document.getElementById('replaceme').innerText = `Total Visitors: ${parsedBody.visitorCount}`;
+                        } else {
+                            document.getElementById('replaceme').innerText = 'Error';
+                            console.error('VisitorCount not found in the response');
                         }
                     } catch (error) {
-                        console.error('Error occurred:', error);
+                        console.error('API call error:', error);
                     }
                 }
+
                 updateVisitorCount();
             });
         </script>
-        <p>&copy; 2024 Tyler Bender. All rights reserved.</p>
+        <p>Contact: tytybender55@gmail.com</p>
+        <p>&copy; 2024 Tyler Bender</p>
     </footer>
-
 </body>
-</html>
+</html
