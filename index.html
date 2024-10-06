@@ -14,7 +14,7 @@
             font-family: 'Roboto', sans-serif; /* Updated font style */
             margin: 0;
             padding: 0;
-            background-color: #f5f5f5; /* Light gray background */
+            background-color: #ffffff; /* White background */
             color: #4a4a4a; /* Dark gray for readability */
             display: flex;
             flex-direction: column;
@@ -27,50 +27,23 @@
             align-items: center;
             padding: 40px 20px;
             max-width: 1100px;
-            margin: 0 auto;
+            margin: 20px auto; /* Center container */
+            background-color: #f8f9fa; /* Light background for the container */
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
             flex-grow: 1;
         }
-        
-        /* Header styles */
-        .header {
-            background-color: #000000; /* Black background */
-            color: #eb6200; /* Orange text */
-            padding: 20px;
-            text-align: center;
-            width: 100%;
-        }
-        
-        .header h1, .header h2 {
-            margin: 0;
-            font-weight: bold;
-        }
 
-        /* Image styles */
-        .image-column img {
-            display: block;
-            margin: 0 auto;
-            border-radius: 50%;
-            border: 5px solid #333333; /* Charcoal border */
-            width: 300px; /* Default image size for PC */
-            height: 300px;
-            object-fit: cover;
-            margin-bottom: 20px;
+        .column {
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
         }
 
         footer {
             font-size: 1.25rem;
             font-weight: bold;
             margin-top: 20px;
-            text-align: center;
-            color: #333333; /* Dark charcoal for footer text */
-        }
-
-        /* Separator styles */
-        .separator {
-            width: 100%;
-            height: 2px;
-            background-color: #cccccc;
-            margin: 20px 0;
         }
 
         h1, h2, p {
@@ -79,18 +52,28 @@
 
         h1 {
             font-size: 4rem; /* Increased font size */
-            color: #333333; /* Charcoal for headings */
+            color: #003366; /* Muted navy for headings */
+            text-align: center;
         }
 
         h2 {
             font-size: 3rem; /* Increased font size */
-            color: #333333; /* Charcoal for subheadings */
+            color: #003366; /* Muted navy for subheadings */
+            text-align: center;
         }
 
         p {
             font-size: clamp(1.25rem, 2vw, 1.5rem); /* Increased font size */
             line-height: 1.6;
             text-align: center;
+        }
+
+        /* Separator styles */
+        .separator {
+            width: 100%;
+            height: 2px;
+            background-color: #cccccc; /* Subtle line for separation */
+            margin: 20px 0;
         }
 
         /* Skills and Projects layout */
@@ -107,7 +90,7 @@
             writing-mode: vertical-rl;
             transform: rotate(180deg);
             font-size: 3rem;
-            color: #333333;
+            color: #003366; /* Muted navy */
             font-weight: bold;
         }
 
@@ -131,16 +114,13 @@
             font-weight: bold;
             font-size: clamp(1.5rem, 1.5vw, 1.5rem); /* Increased font size */
             margin-bottom: 5px;
+            background-color: #e7f1ff; /* Light blue background for list items */
+            padding: 10px;
+            border-radius: 4px; /* Rounded corners */
         }
 
         .projects {
             text-align: center;
-        }
-
-        /* Link styles */
-        a {
-            color: #eb6200; /* Orange for links */
-            text-decoration: underline;
         }
 
         /* Responsive adjustments */
@@ -174,14 +154,26 @@
                 height: 350px;
             }
         }
+
+        .image-column img {
+            display: block;
+            margin: 0 auto;
+            border-radius: 50%;
+            border: 5px solid #333333; /* Charcoal border */
+            width: 300px; /* Default image size for PC */
+            height: 300px;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+
+        /* Link styles */
+        a {
+            color: #006699; /* Muted navy for links */
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
-
-    <div class="header">
-        <h1>Tyler Bender's Cloud Resume Challenge</h1>
-        <h2>Cloud Engineer (In Training)</h2>
-    </div>
 
     <div class="container">
         <!-- Image Column at the Top -->
@@ -191,6 +183,8 @@
 
         <!-- Text Column -->
         <div class="column text-column">
+            <h1>Tyler Bender's Cloud Resume Challenge</h1>
+            <h2>Cloud Engineer (In Training)</h2>
             <p><span id="replaceme"></span></p>
             <p>Aspiring Cloud Engineer with a strong foundation in Python, GitHub, and AWS. Experienced in building and managing cloud infrastructure, focusing on serverless architectures and API integration. Passionate about technical support and optimizing cloud environments for scalability and efficiency. Dedicated to continuous learning in cloud computing.</p>
 
@@ -274,8 +268,6 @@
                         document.getElementById('replaceme').innerText = 'Error';
                     }
                 }
-            
-                // Call the function once the DOM is ready
                 updateVisitorCount();
             });
         </script>
