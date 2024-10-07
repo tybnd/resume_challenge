@@ -118,8 +118,8 @@
             flex-grow: 1;
         }
         .skills-list, .projects-list {
-            list-style-type: disc; /* Bullet points for skills */
-            padding-left: 20px;
+            list-style-type: none; /* No bullet points for project names */
+            padding-left: 0;
             margin: 0;
         }
         .skills-list li, .projects-list li {
@@ -127,6 +127,9 @@
             font-size: clamp(1rem, 2vw, 1.25rem); /* Responsive sizing */
             margin-bottom: 3px; /* Reduced margin */
             text-align: left; /* Left align list items */
+        }
+        .projects-list li ul {
+            list-style-type: disc; /* Bullet points for project descriptions */
         }
         .projects {
             text-align: center;
@@ -243,7 +246,7 @@
                     <li>
                         <strong><a href="https://mellonfamilylawncare.com/">Mellon Family Lawn Care</a></strong>
                         <ul>
-                            <li>Responsive website designed for a local lawn care service using Wordpress & CSS</li>
+                            <li>Responsive website designed for a local lawn care service using Wordpress & CSS.</li>
                             <li>Features include service descriptions and contact forms.</li>
                             <li>Integration with Google Maps for location services.</li>
                         </ul>
@@ -251,7 +254,7 @@
                     <li>
                         <strong><a href="https://tricountysealcoating.com/">Tri-County Sealcoating</a></strong>
                         <ul>
-                            <li>Developed a professional site for a sealcoating business with a clean layout.</li>
+                            <li>Developed a custom website to enhance visibility for a local asphalt business.</li>
                             <li>Effective SEO strategies to drive traffic and conversions.</li>
                             <li>Mobile responsiveness and user-friendly navigation were key focuses.</li>
                         </ul>
@@ -260,8 +263,6 @@
             </div>
         </div>
         
-        
-
     <footer id="contact">
         <script>
             document.addEventListener("DOMContentLoaded", function() {
