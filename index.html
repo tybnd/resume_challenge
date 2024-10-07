@@ -147,6 +147,17 @@
             margin-bottom: 10px;
         }
 
+        /* Contact Info */
+        .contact-info {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+        .contact-info div {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
         /* Responsive adjustments */
         @media (max-width: 750px) {
             h1, h2, p {
@@ -170,6 +181,14 @@
             .column {
                 width: 90%; /* Expand text area on mobile */
                 padding: 5px;
+            }
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+                font-size: larger;
+            }
+            .contact-info div {
+                margin: 5px 0;
             }
             footer {
                 font-size: clamp(0.8rem, 3vw, 1rem); /* Make footer text more readable */
@@ -207,9 +226,14 @@
                 <h2>Cloud Engineer (In Training)</h2>
                 <p id="replaceme"></p>
                 <p>Aspiring Cloud Engineer with a strong foundation in Python, GitHub, and AWS. Experienced in building and managing cloud infrastructure, focusing on serverless architectures and API integration. Passionate about technical support and optimizing cloud environments for scalability and efficiency. Dedicated to continuous learning in cloud computing.</p>
+                
+                <!-- Contact Info -->
+                <div class="contact-info">
+                    <p>tytybender55@gmail.com / (856) 366-3196</p>
+                    
+                </div>
             </div>
-            <p>Contact: tytybender55@gmail.com</p>
-            <p>(856)-366-3196</p>
+            
         </div>
 
         <div class="separator"></div>
