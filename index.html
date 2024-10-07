@@ -161,40 +161,47 @@
 
         /* Responsive adjustments */
         @media (max-width: 750px) {
-            h1, h2, p {
-                font-size: clamp(1.8rem, 5vw, 2.5rem); /* Increase text size for mobile */
+            h1 {
+                font-size: clamp(2rem, 6vw, 3rem); /* Adjusted font size for h1 */
+            }
+            h2 {
+                font-size: clamp(1.5rem, 5vw, 2rem); /* Increased font size for h2 */
+            }
+            p {
+                font-size: clamp(1.5rem, 2.5vw, 1.5rem); /* Font size for paragraphs */
             }
             nav a {
                 margin: 0 5px; /* Smaller margins for links */
                 font-size: clamp(1rem, 4vw, 1.25rem); /* Larger font size for links on mobile */
             }
             .container {
-                padding: 10px 5px;
+                padding: 10px 5px; /* Adjusted padding for container */
             }
             .row {
-                flex-direction: column;
-                align-items: center;
+                flex-direction: column; /* Stacking layout */
+                align-items: center; /* Centering items */
             }
             .image-column img {
-                width: 200px;
-                height: 200px;
+                width: 200px; /* Width for images */
+                height: 200px; /* Height for images */
             }
             .column {
                 width: 90%; /* Expand text area on mobile */
-                padding: 5px;
+                padding: 5px; /* Padding for columns */
             }
             .contact-info {
-                flex-direction: column;
-                align-items: center;
-                font-size: larger;
+                flex-direction: column; /* Stacking contact info */
+                align-items: center; /* Centering contact info */
+                font-size: larger; /* Larger font size for contact info */
             }
             .contact-info div {
-                margin: 2px 0;
+                margin: 2px 0; /* Spacing for contact info items */
             }
             footer {
-                font-size: clamp(0.8rem, 3vw, 1rem); /* Make footer text more readable */
+                font-size: clamp(0.8rem, 3vw, 1rem); /* Adjusted footer text size */
             }
         }
+
 
         /* Link styles */
         a {
