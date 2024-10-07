@@ -80,8 +80,8 @@
             color: #333333;
             text-align: center;
         }
-        p {
-            font-size: clamp(0.8rem, 2vw, 1.5rem); /* Smaller font for mobile */
+        p, li, span {
+            font-size: clamp(1rem, 1.5vw, 1.25rem); /* Consistent font size for all non-header text */
             line-height: 1.4;
             text-align: center;
         }
@@ -101,7 +101,7 @@
         .projects-list li ul {
             list-style-type: disc; /* Default bullet points for nested lists */
             margin-left: 10px; /* Adjusted indent */
-            font-size: clamp(0.75rem, 1vw, 1rem); /* Smaller font size for descriptions */
+            font-size: clamp(1rem, 1.5vw, 1.25rem); /* Unified font size */
             color: #555; /* Subtle color for descriptions */
         }
         .vertical-header {
@@ -118,14 +118,15 @@
             flex-grow: 1;
         }
         .skills-list, .projects-list {
-            list-style-type: none;
-            padding: 0;
+            list-style-type: disc; /* Bullet points for skills */
+            padding-left: 20px;
             margin: 0;
         }
         .skills-list li, .projects-list li {
             font-weight: bold;
-            font-size: clamp(1rem, 2vw, 1rem); /* Responsive sizing */
+            font-size: clamp(1rem, 2vw, 1.25rem); /* Responsive sizing */
             margin-bottom: 3px; /* Reduced margin */
+            text-align: left; /* Left align list items */
         }
         .projects {
             text-align: center;
@@ -303,4 +304,4 @@
         <p>&copy; 2024 Tyler Bender</p>
     </footer>
 </body>
-</html
+</html>
