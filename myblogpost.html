@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=.75">
+    <title>Blog Post - Cloud Engineering Journey</title>
+    <link rel="stylesheet" href="websitestyle.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #2e2e2e;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            background-color: #000000;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        nav {
+            margin-top: 10px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 1100px;
+            margin: 0 auto;
+            flex-grow: 1;
+        }
+        .row {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+        .column {
+            width: 65%;
+            padding: 10px;
+            box-sizing: border-box;
+            text-align: left;
+        }
+        h1, h2, p {
+            font-weight: bold;
+        }
+        h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            color: #FFFFFF;
+            text-align: center;
+        }
+        h2 {
+            font-size: 3rem;
+            color: #333333;
+            text-align: left;
+        }
+        p {
+            font-size: clamp(1.5rem, 2.5vw, 1.5rem);
+        }
+        .separator {
+            width: 100%;
+            height: 2px;
+            background-color: #cccccc;
+            margin: 10px 0;
+        }
+        .vertical-header {
+            writing-mode: vertical-rl;
+            transform: rotate(180deg);
+            font-size: clamp(2.5rem, 5.5vw, 3.5rem);
+            color: #333333;
+            font-weight: bold;
+        }
+        .skills-container, .projects-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            flex-grow: 1;
+        }
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin: 0;
+        }
+        li {
+            font-weight: bold;
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            margin-bottom: 3px;
+            text-align: left;
+        }
+        footer {
+            font-size: 1rem;
+            font-weight: bold;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 750px) {
+            h1, h2, p {
+                font-size: clamp(1.8rem, 5vw, 2.5rem);
+            }
+            nav a {
+                margin: 0 5px;
+                font-size: clamp(1rem, 4vw, 1.25rem);
+            }
+            .container {
+                padding: 10px 5px;
+            }
+            .row {
+                flex-direction: column;
+                align-items: center;
+            }
+            .column {
+                width: 90%;
+                padding: 5px;
+            }
+            footer {
+                font-size: clamp(0.8rem, 3vw, 1rem);
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Cloud Engineering Blog</h1>
+    <nav>
+        <a href="#intro">Introduction</a>
+        <a href="#lessons">Lessons Learned</a>
+        <a href="#next">What’s Next</a>
+    </nav>
+</header>
+
+<div class="container">
+    <div class="row">
+        <div class="column" id="intro">
+            <h2>My Journey into Cloud Engineering</h2>
+            <p>When I first got into cloud engineering, I didn’t really know where to start. AWS, Lambda, APIs... it all seemed overwhelming. But like with anything, I realized that you just have to dive in headfirst, and learn as you go. Here are a few key moments that shaped my journey so far.</p>
+            <div class="separator"></div>
+        </div>
+        
+        <div class="column" id="lessons">
+            <h2>Lessons Learned</h2>
+            <ul>
+                <li><strong>Start Small:</strong> My first project was a simple static website hosted on S3. This gave me a hands-on feel for what AWS can do without overcomplicating things.</li>
+                <li><strong>Break Things (and Fix Them):</strong> Troubleshooting was—and still is—a huge part of my learning. I’ve spent hours debugging configurations and finding out why my Lambda function didn’t trigger. It’s frustrating but rewarding.</li>
+                <li><strong>Master One Tool at a Time:</strong> I made the mistake of trying to learn everything at once. Focusing on one service (like Lambda or API Gateway) really helped me get comfortable before moving on to the next challenge.</li>
+                <li><strong>Use Resources:</strong> AWS has some great docs, and the community is super helpful. Don't be afraid to ask questions and dig into resources like GitHub or StackOverflow.</li>
+            </ul>
+            <div class="separator"></div>
+        </div>
+
+        <div class="column" id="next">
+            <h2>What’s Next?</h2>
+            <p>So, what’s next for me? I’m currently diving into Infrastructure as Code (IaC) using Terraform and AWS CloudFormation. The goal is to automate deployments and manage cloud infrastructure more efficiently. Stay tuned for more updates as I continue this cloud journey!</p>
+            <div class="separator"></div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2024 Tyler Bender</p>
+</footer>
+
+</body>
+</html>
