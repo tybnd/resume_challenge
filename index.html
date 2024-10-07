@@ -66,26 +66,27 @@
             margin-top: 20px;
             text-align: center;
         }
-        h1, h2, p {
-            font-weight: bold;
+        h1, h2{
+            font-weight: 800;
         }
         h1 {
-            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-size: clamp(2rem, 5.5vw, 3.5rem);
             color: #FFFFFF;
             text-align: center; /* Centered heading */
         }
         h2 {
-            font-size: 3rem;
+            font-size: clamp(2rem, 5vw, 3rem); /* Increased minimum size */
             color: #333333;
             text-align: left;
         }
+
         li, span {
             font-size: clamp(1rem, 1.5vw, 1.25rem);
             line-height: 1.4;
             text-align: left;
         }
         p {
-            font-size: clamp(1.5rem, 2.5vw, 1.5rem);
+            font-size: clamp(1.25rem, 2.5vw, 1.5rem); /* Adjusted for better contrast with h2 */
         }
         .separator {
             width: 100%;
@@ -111,7 +112,7 @@
             transform: rotate(180deg);
             font-size: clamp(2.5rem, 5.5vw, 3.5rem);
             color: #333333;
-            font-weight: bold;
+            font-weight: 800;
         }
         .skills-container, .projects-container {
             display: flex;
@@ -125,7 +126,7 @@
             margin: 0;
         }
         .skills-list li, .projects-list li {
-            font-weight: bold;
+
             font-size: clamp(1rem, 2vw, 1.25rem);
             margin-bottom: 3px;
             text-align: left;
@@ -155,7 +156,7 @@
         }
         .contact-info div {
             font-size: 1.5rem;
-            font-weight: bold;
+            font-weight: 800;
         }
 
         /* Responsive adjustments */
@@ -199,7 +200,7 @@
         a {
             color: #006699;
             text-decoration: underline;
-            font-size: large;
+            font-size: larger;
         }
         a:hover {
             color: #004466;
@@ -223,7 +224,7 @@
         <div class="row">
         
             <div class="column text-column">
-                <h2>Cloud Engineer (In Training)</h2>
+                <h2>Cloud Engineer <span class="subheading">(In Training)</span></h2>
                 <p id="replaceme"></p>
                 <p>Aspiring Cloud Engineer with a strong foundation in Python, GitHub, and AWS. Experienced in building and managing cloud infrastructure, focusing on serverless architectures and API integration. Passionate about technical support and optimizing cloud environments for scalability and efficiency. Dedicated to continuous learning in cloud computing.</p>
                 
