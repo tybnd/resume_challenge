@@ -116,7 +116,7 @@ a:hover .u-shadow {
   text-shadow: -4px -4px 0 salmon;
 }
 
-@media (max-width: 576px) {
+@media (max-width: 590px) {
   .u-hidden\@sm-down {
     display: none !important;
   }
@@ -202,14 +202,14 @@ ul {
   padding: 30px;
 }
 
-@media (max-width: 576px) {
+@media (max-width: 590px) {
   .l-Wrapper--reset\@sm-down {
     width: 100%;
     
   }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 590px) {
   .l-Wrapper {
     padding: 0;/* Remove right padding */
     margin: 0
@@ -227,7 +227,7 @@ ul {
   margin-bottom: 20px;
 }
 
-@media (min-width: 576px) {
+@media (min-width: 590px) {
   .l-Header {
     display: flex;
     justify-content: space-between;
@@ -320,7 +320,7 @@ a.Navbar-btn:hover {
   background: #80c3da;
 }
 
-@media (max-width: 576px) {
+@media (max-width: 590x) {
   .Navbar {
     text-align: right;
   }
