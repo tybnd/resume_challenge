@@ -334,7 +334,7 @@ fieldset[disabled] .btn-theme {
   	[Promo Block]
 ------------------------------------------------------------------*/
 .promo-block {
-  position: relative;
+  position: center;
   background: #060606;
   padding-top: 220px;
 }
