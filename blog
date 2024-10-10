@@ -10,7 +10,7 @@
 </head>
 <body>
 
-    <nav class="Navbar">
+    <nav class="Navbar" style="padding: 10px;">
         <ul>
             <li><a href="https://tycloudresume.com" class="u-link">Resume</a></li>
             <li><a href="#intro" class="u-link">Introduction</a></li>
@@ -49,10 +49,6 @@
         <div class="u-keyline"></div>
     </section>
 </article>
-
-<footer class="l-Footer">
-    <p>&copy; 2024 Tyler Bender</p>
-</footer>
 
 </body>
 </html>
