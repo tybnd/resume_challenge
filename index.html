@@ -3,351 +3,153 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=.75"> <!-- Updated for mobile responsiveness -->
-    <title>Tyler Bender's Resume Challenge</title>
+    <title>Tyler Bender's Cloud Resume Challenge</title>
     <link rel="stylesheet" href="websitestyle.css">
     <link rel="icon" type="image/x-icon" href="T.png">
-    <style>
-        /* Global styles */
-        * {
-            box-sizing: border-box;
-        }
-        body {
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f5f5f5;
-            color: #2e2e2e;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            overflow-x: hidden;
-        }
-        header {
-            background-color: #000000;
-            color: white;
-            padding: 20px 0;
-            text-align: center;
-        }
-        nav {
-            margin-top: 10px;
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 10px;
-            font-weight: bold;
-        }
-        nav a:hover {
-            text-decoration: underline;
-        }
-        .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            max-width: 1100px;
-            margin: 0 auto;
-            flex-grow: 1;
-        }
-        .row {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-        }
-        .column {
-            width: 65%;
-            padding: 10px; /* Increased padding for better spacing */
-            box-sizing: border-box;
-            text-align: left;
-        }
-        footer {
-            font-size: 1rem;
-            font-weight: bold;
-            margin-top: 20px;
-            text-align: center;
-        }
-        h1, h2{
-            font-weight: 800;
-        }
-        h1 {
-            font-size: clamp(2rem, 5.5vw, 3.5rem);
-            color: #FFFFFF;
-            text-align: center; /* Centered heading */
-        }
-        h2 {
-            font-size: clamp(2rem, 5vw, 3rem); /* Increased minimum size */
-            color: #333333;
-            text-align: left;
-        }
-
-        li, span {
-            font-size: clamp(1rem, 1.5vw, 1.25rem);
-            line-height: 1.4;
-            text-align: left;
-        }
-        p {
-            font-size: clamp(1.25rem, 2.5vw, 1.5rem); /* Adjusted for better contrast with h2 */
-        }
-        .separator {
-            width: 100%;
-            height: 2px;
-            background-color: #cccccc;
-            margin: 10px 0;
-        }
-        .skills-projects-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-            width: 100%;
-        }
-        .projects-list li ul {
-            list-style-type: disc;
-            margin-left: 10px;
-            font-size: clamp(1rem, 1.5vw, 1.25rem);
-            color: #555;
-        }
-        .vertical-header {
-            writing-mode: vertical-rl;
-            transform: rotate(180deg);
-            font-size: clamp(2.5rem, 5.5vw, 3.5rem);
-            color: #333333;
-            font-weight: 800;
-        }
-        .skills-container, .projects-container {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            flex-grow: 1;
-        }
-        .skills-list, .projects-list {
-            list-style-type: none;
-            padding-left: 0;
-            margin: 0;
-        }
-        .skills-list li, .projects-list li {
-
-            font-size: clamp(1rem, 2vw, 1.25rem);
-            margin-bottom: 3px;
-            text-align: left;
-        }
-        .projects-list li ul {
-            list-style-type: disc;
-        }
-        .projects {
-            text-align: center;
-        }
-        .image-column img {
-            display: block;
-            margin: 0 auto;
-            border-radius: 50%;
-            border: 5px solid #333333;
-            width: 250px;
-            height: 250px;
-            object-fit: cover;
-            margin-bottom: 10px;
-        }
-
-        /* Contact Info */
-        .contact-info {
-            display: flex;
-            justify-content: space-evenly;
-            margin-top: 10px;
-        }
-        .contact-info div {
-            font-size: 1.5rem;
-            font-weight: 500;
-        }
-        
-        /* Responsive adjustments */
-        @media (max-width: 750px) {
-            h1 {
-                font-size: clamp(2.5rem, 8vw, 3.5rem); /* Increased size for h1 */
-            }
-            h2 {
-                font-size: clamp(3rem, 6vw, 5rem); /* Increased size for h2 */
-            }
-            p {
-                font-size: clamp(1.5rem, 2.5vw, 1.5rem); /* Font size for paragraphs */
-            }
-            nav a {
-                margin: 0 5px; /* Smaller margins for links */
-                font-size: clamp(1rem, 4vw, 1.25rem); /* Font size for links */
-            }
-            .container {
-                padding: 10px 5px; /* Padding for container */
-            }
-            .row {
-                flex-direction: column; /* Stacking layout */
-                align-items: center; /* Centering items */
-            }
-            .image-column img {
-                width: 200px; /* Width for images */
-                height: 200px; /* Height for images */
-            }
-            .column {
-                width: 90%; /* Expand text area on mobile */
-                padding: 5px; /* Padding for columns */
-            }
-            .contact-info {
-                flex-direction: column; /* Stacking contact info */
-                align-items: left; /* Centering contact info */
-                font-size: medium; /* Larger font size for contact info */
-            }
-            .contact-info div {
-                margin: 2px 0; /* Spacing for contact info items */
-            }
-            footer {
-                font-size: clamp(0.8rem, 3vw, 1rem); /* Adjusted footer text size */
-            }
-        }
-
-
-
-        /* Link styles */
-        a {
-            color: #006699;
-            text-decoration: underline;
-            font-size: larger;
-        }
-        a:hover {
-            color: #004466;
-        }
-
-    </style>
 </head>
 <body>
 
-    <header>
-        <h1>Tyler Bender's Cloud Resume Challenge</h1>
-        <p id="replaceme" style="font-size: clamp(1rem, 4vw, 1.25rem); font-weight: 800;"><p>
-        <nav>
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <a href="https://tycloudresume.com/blog">Blog Post</a>
-        </nav>
-    </header>
+<nav class="Navbar">
+  <div class="l-Wrapper l-Wrapper--reset@sm-down">
+    <ul class="u-pullRight u-hidden@xs-down">
+      <li>
+        <a class="Navbar-btn Navbar-btn--main" href="https://tycloudresume.com" target="_blank">Download 
+          <span>(pdf)</span>
+        </a>
+      </li>
+    </ul>
+    <ul>
+      <li><a href="https://www.linkedin.com/in/tyler-b-960aa2217/" target="_blank"><img src="linkd.png" style="width: 60px;"></a></li>
+      <li><a href="https://github.com/tybnd" target="_blank"><img src="git.png" style="width: 60px;" ></a></li>
+    </ul>
+  </div>
+</nav>
 
-    <div class="container" id="about">
-        <div class="row">
+<article class="l-Wrapper">
+
+  <div class="l-Header">
+    <div class="l-Header-col">
+      <h1 class="Title">
+        <span class="u-shadow">
+          Tyler<br>
+          Bender's<br>
+          Cloud Resume
+        </span>
+        <span class="Title-sub"><div style="font-size: 2rem;">Aspiring Cloud Engineer </div><br>
+            <div style="font-size: 1.5rem;"id="replaceme"></div></span>
         
-            <div class="column text-column">
-                <h2>Cloud Engineer<br><span><p>(In Training)</p></span></h2>
+      </h1>
+    </div>
+    <div class="l-Header-col Contact">
+      <div>West Deptford, NJ</div>
+      <div><a class="special-link" href="https://tycloudresume.com" target="_blank">tycloudresume.com</a></div>
+      <div><a class="special-link" href="mailto:tytybender55@gmail.com" target="_blank">tytybender55@gmail.com</a></div>
+    </div>
+  </div>
 
-                <p>Aspiring Cloud Engineer with a solid foundation in Python programming, GitHub, and AWS Cloud Services. Experienced in building cloud infrastructure using serverless architectures and API integration. Known for problem-solving, especially when overcoming complex technical challenges in cloud environments. Passionate about troubleshooting, optimizing cloud setups for efficiency, and continuously expanding my expertise in cloud technologies.</p>
-                <div class="contact-info">
-                    <div>tytybender55@gmail.com</div>
-                <!-- Contact Info -->   
-                </div>
-            </div>  
-            
-            
-        </div>
+  <section class="l-Section" id="about">
+    <h2 class="l-Section-title h3">About</h2>
+    <div class="l-Section-content">
+      <p>Aspiring Cloud Engineer with a solid foundation in Python programming, GitHub, and AWS Cloud Services. Experienced in building cloud infrastructure using serverless architectures and API integration. Known for problem-solving, especially when overcoming complex technical challenges in cloud environments. Passionate about troubleshooting, optimizing cloud setups for efficiency, and continuously expanding my expertise in cloud technologies.</p>
+    </div>
+  </section>
 
-        <div class="separator"></div>
+  <section class="l-Section" id="skills">
+    <h2 class="l-Section-title h3">Skills</h2>
+    <div class="l-Section-content">
+      <ul>
+        <ul>
+        <li>AWS Cloud Services (Lambda, S3, etc.)</li>
+        <li>Python Programming</li>
+        <li>SQL Databases</li>
+        <li>Serverless Architecture</li>
+        <li>API Development</li>
+        <li>Technical Support</li>
+        <li>JSON & YAML Syntax</li>
+        <li>GitHub Version Control</li>
+        <li>Infrastructure as Code (IaC)</li>
+        <li>Powershell</li>
+        <li>Monitoring & Logging (CloudWatch)</li>
+        <li>Troubleshooting & Debugging</li>
+    </ul>
+      </ul>
+    </div>
+  </section>
 
-        <div class="skills-projects-container" id="skills">
-            <div class="vertical-header">Skills</div>
-            <div class="skills-container">
-                <ul class="skills-list">
-                    <li>AWS Cloud Services (Lambda, S3, etc.)</li>
-                    <li>Python Programming</li>
-                    <li>SQL Databases</li>
-                    <li>Serverless Architecture</li>
-                    <li>API Development</li>
-                    <li>Technical Support</li>
-                </ul>
-                <ul class="skills-list">
-                    <li>JSON & YAML Syntax</li>
-                    <li>GitHub Version Control</li>
-                    <li>Infrastructure as Code (IaC)</li>
-                    <li>Powershell</li>
-                    <li>Monitoring & Logging (CloudWatch)</li>
-                    <li>Troubleshooting & Debugging</li>
-                </ul>
-            </div>
-        </div>
+  <section class="l-Section" id="projects">
+    <h2 class="l-Section-title h3">Projects</h2>
+    <div class="l-Section-content">
+      <ul>
+          <strong style="font-size: larger;"><a class="special-link" href="https://tycloudresume.com/">Cloud Resume Challenge</a></strong>
+        <ul>
+          <li>Built a serverless resume using AWS services such as Lambda, API Gateway, and S3.</li>
+          <li>Dynamic updates for visitor counts through API calls.</li>
+          <li>Showcases skills in cloud engineering and serverless architecture.</li>
+        </ul>
 
-        <div class="separator"></div>
+        <ul>
+          <strong style="font-size: larger;"><a class="special-link" href="https://webplox.com/">Webplox</a></strong>
+          <li>Created a web design and SEO service focusing on improving business' online presence.</li>
+          <li>Developed custom websites and implemented SEO strategies to increase local searches.</li>
+          </ul>
+        <ul>
+        <strong style="font-size: larger;"><a class="special-link" href="https://mellonfamilylawncare.com/">Mellon Family Lawn Care</a></strong>
+          <li>Designed a responsive website for a local lawn care company (ranked #1 on Google).</li>
+          <li>Assisted with technical support issues, and debugging common website errors.</li>
+        </ul>
 
-        <div class="skills-projects-container" id="projects">
-            <div class="vertical-header">Projects</div>
-            <div class="projects-container">
-                <ul class="projects-list">
-                    <li>
-                        <strong><a href="https://tycloudresume.com/">Cloud Resume Challenge</a></strong>
-                        
-                            <li>- Built a serverless resume using AWS services such as Lambda, API Gateway, and S3.</li>
-                            <li>- Dynamic updates for visitor counts through API calls.</li>
-                            <li>- Showcases skills in cloud engineering and serverless architecture.</li>
-                        
-                    </li>
-                    <li>
-                        <strong><a href="https://webplox.com/">Webplox</a></strong>
-                        
-                            <li>- Created a web design and SEO service focusing on improving business' online presence.</li>
-                            <li>- Developed custom websites and implemented SEO strategies to increase local searches.</li>
-                        
-                    </li>
-                    <li>
-                        <strong><a href="https://mellonfamilylawncare.com/">Mellon Family Lawn Care</a></strong>
+        <ul>
+          <strong style="font-size: larger;"><a class="special-link" href="https://tricountysealcoating.com/">Tri-County Sealcoating</a></strong>
+          <li>Developed a custom website to enhance visibility for a local asphalt business.</li>
+          <li>Effective SEO strategies to drive traffic and conversions.</li>
+        </ul>
+      </ul>
+    </div>
+  </section>
 
-                            <li>- Designed a responsive website for a local lawn care company (ranked #1 on Google).</li>
-                            <li>- Assisted with technical support issues, and debugging common website errors.</li>
-                        
-                    </li>
-                    <li>
-                        <strong><a href="https://tricountysealcoating.com/">Tri-County Sealcoating</a></strong>
-                        
-                            <li>- Developed a custom website to enhance visibility for a local asphalt business.</li>
-                            <li>- Effective SEO strategies to drive traffic and conversions.</li>
-                        
-                    </li>
-                </ul>
-            </div>
-        </div>
+</article>
+
+
+<footer id="contact">
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            async function updateVisitorCount() {
+                try {
+                    console.log('Sending PUT request...');
+                    const putResponse = await fetch('https://juop84rxae.execute-api.us-east-1.amazonaws.com/Prod/put?ID=123', {
+                        method: 'PUT',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({ ID: "123" })
+                    });
+                    if (!putResponse.ok) throw new Error(`PUT failed: ${putResponse.status}`);
+                    
+                    console.log('PUT successful, now sending GET request...');
+                    const getResponse = await fetch('https://juop84rxae.execute-api.us-east-1.amazonaws.com/Prod/get');
+                    if (!getResponse.ok) throw new Error(`GET failed: ${getResponse.status}`);
+                    
+                    const data = await getResponse.json();
+                    console.log('GET response data:', data);
+                    
+                    const parsedBody = JSON.parse(data.body);
         
-    <footer id="contact">
-        <script>
-            document.addEventListener("DOMContentLoaded", function() {
-                async function updateVisitorCount() {
-                    try {
-                        console.log('Sending PUT request...');
-                        const putResponse = await fetch('https://juop84rxae.execute-api.us-east-1.amazonaws.com/Prod/put?ID=123', {
-                            method: 'PUT',
-                            headers: {
-                                'Content-Type': 'application/json'
-                            },
-                            body: JSON.stringify({ ID: "123" })
-                        });
-                        if (!putResponse.ok) throw new Error(`PUT failed: ${putResponse.status}`);
-                        
-                        console.log('PUT successful, now sending GET request...');
-                        const getResponse = await fetch('https://juop84rxae.execute-api.us-east-1.amazonaws.com/Prod/get');
-                        if (!getResponse.ok) throw new Error(`GET failed: ${getResponse.status}`);
-                        
-                        const data = await getResponse.json();
-                        console.log('GET response data:', data);
-                        
-                        const parsedBody = JSON.parse(data.body);
-            
-                        if (parsedBody && parsedBody.visitorCount !== undefined) {
-                            document.getElementById('replaceme').innerText = `Total Visitors: ${parsedBody.visitorCount}`;
-                        } else {
-                            document.getElementById('replaceme').innerText = 'Error';
-                            console.error('VisitorCount not found in the response');
-                        }
-                    } catch (error) {
-                        console.error('API call error:', error);
+                    if (parsedBody && parsedBody.visitorCount !== undefined) {
+                        document.getElementById('replaceme').innerText = `Total Visitors: ${parsedBody.visitorCount}`;
+                    } else {
+                        document.getElementById('replaceme').innerText = 'Error';
+                        console.error('VisitorCount not found in the response');
                     }
+                } catch (error) {
+                    console.error('API call error:', error);
                 }
+            }
 
-                updateVisitorCount();
-            });
-        </script>
-        <p>&copy; 2024 Tyler Bender</p>
-    </footer>
+            updateVisitorCount();
+        });
+    </script>
+</footer>
+
+
 </body>
 </html>
