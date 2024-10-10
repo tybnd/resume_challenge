@@ -272,12 +272,13 @@ ul {
 
 .Navbar {
   display: flex;
-  vertical-align:  center; /* Center items vertically */
-  justify-content: space-around; /* Spread items evenly across the navbar */
+  justify-content: space-between; /* Spread items evenly */
+  align-items: center; /* Center items vertically */
+  flex-wrap: nowrap; /* Ensure items are in a single line */
   color: #fff;
   font-size: 1.4rem;
   font-weight: bold;
-  line-height: 3rem; 
+  line-height: 3rem; /* Reduced from 4rem to 3rem */
   letter-spacing: 0.28rem;
   text-transform: uppercase;
   width: 100%;
@@ -286,31 +287,20 @@ ul {
 
 .Navbar ul {
   display: flex; /* Keep list items in a row */
-  flex-direction: row; /* Ensure row direction */
-  align-items: center; /* Center list items vertically */
-  padding: 0; /* Remove padding */
-  margin: 0; /* Remove margin */
+  padding: 0;
+  margin: 0;
 }
 
 .Navbar ul li {
-  margin: 0 10px; /* Add horizontal spacing */
-  list-style: none; /* Remove bullet points */
+  margin: 0 10px; /* Adjust margin for spacing */
 }
 
-.Navbar a {
-  text-decoration: none; /* Remove underline from links */
-  color: #fff; /* Link color */
-  padding: 10px; /* Optional: Add padding for links */
-}
-
-
-a.Navbar-btn {
-  vertical-align: middle;
+.Navbar a.Navbar-btn {
   padding-left: 25px;
   padding-right: 25px;
   background: #9ad7eb;
-  height: 40px;  /* Set a fixed height for the button */
-  line-height: 40px; /* Vertically centers text inside the button */
+  height: 40px; /* Set a fixed height for the button */
+  line-height: 40px; /* Center text vertically */
   display: inline-block;
   text-align: center; /* Center the text horizontally */
 }
