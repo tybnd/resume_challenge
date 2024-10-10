@@ -195,11 +195,11 @@ ul {
 }
 
 .l-Wrapper {
-  width: 80%;
+  width: 85%;
   max-width: 90rem;
   margin-left: auto;
   margin-right: auto;
-  padding: 30px;
+  padding: 20px;
 }
 
 @media (max-width: 576px) {
