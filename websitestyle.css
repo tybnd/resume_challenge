@@ -272,13 +272,12 @@ ul {
 
 .Navbar {
   display: flex;
-  align-items: center;
-  flex-wrap: wrap; /* Center items vertically */
+  align-items: center; /* Center items vertically */
   justify-content: space-around; /* Spread items evenly across the navbar */
   color: #fff;
   font-size: 1.4rem;
   font-weight: bold;
-  line-height: 3rem; /* Reduced from 4rem to 3rem */
+  line-height: 3rem; 
   letter-spacing: 0.28rem;
   text-transform: uppercase;
   width: 100%;
@@ -286,15 +285,24 @@ ul {
 }
 
 .Navbar ul {
-  display: flex; /* Use flexbox for the list */
-  flex-direction: row; /* Align items in a row */
-  justify-content: space-between; /* Space items evenly */
-  width: 100%; /*/* Center the list items vertically */
+  display: flex; /* Keep list items in a row */
+  flex-direction: row; /* Ensure row direction */
+  align-items: center; /* Center list items vertically */
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margin */
 }
 
 .Navbar ul li {
-  margin: 0 10px; /* Add some margin between items if needed */
+  margin: 0 10px; /* Add horizontal spacing */
+  list-style: none; /* Remove bullet points */
 }
+
+.Navbar a {
+  text-decoration: none; /* Remove underline from links */
+  color: #fff; /* Link color */
+  padding: 10px; /* Optional: Add padding for links */
+}
+
 
 a.Navbar-btn {
   padding-left: 20px;
