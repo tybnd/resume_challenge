@@ -24,30 +24,36 @@
     </nav>
 </header>
 
-<div class="l-Wrapper">
-    <div class="l-Section" id="intro">
-        <h2 class="l-Section-title">My Journey into Cloud Engineering</h2>
-        <p>When I first got into cloud engineering, I didn’t really know where to start. AWS, Lambda, APIs... it all seemed overwhelming. But like with anything, I realized that you just have to dive in headfirst, and learn as you go. Here are a few key moments that shaped my journey so far.</p>
+<article class="l-Wrapper">
+    <section class="l-Section" id="intro">
+        <h2 class="l-Section-title h3">My Journey into Cloud Engineering</h2>
+        <div class="l-Section-content">
+            <p>When I first got into cloud engineering, I didn’t really know where to start. AWS, Lambda, APIs... it all seemed overwhelming. But like with anything, I realized that you just have to dive in headfirst, and learn as you go. Here are a few key moments that shaped my journey so far.</p>
+        </div>
         <div class="u-keyline"></div>
-    </div>
+    </section>
 
-    <div class="l-Section" id="lessons">
-        <h2 class="l-Section-title">Lessons Learned</h2>
-        <ul class="my-list">
-            <li><strong>Start Small:</strong> My first project was a simple static website hosted on S3. This gave me a hands-on feel for what AWS can do without overcomplicating things.</li>
-            <li><strong>Break Things (and Fix Them):</strong> Troubleshooting was—and still is—a huge part of my learning. I’ve spent hours debugging configurations and finding out why my Lambda function didn’t trigger. It’s frustrating but rewarding.</li>
-            <li><strong>Master One Tool at a Time:</strong> I made the mistake of trying to learn everything at once. Focusing on one service (like Lambda or API Gateway) really helped me get comfortable before moving on to the next challenge.</li>
-            <li><strong>Use Resources:</strong> AWS has some great docs, and the community is super helpful. Don't be afraid to ask questions and dig into resources like GitHub or StackOverflow.</li>
-        </ul>
+    <section class="l-Section" id="lessons">
+        <h2 class="l-Section-title h3">Lessons Learned</h2>
+        <div class="l-Section-content">
+            <ul class="my-list">
+                <li><strong>Start Small:</strong> My first project was a simple static website hosted on S3. This gave me a hands-on feel for what AWS can do without overcomplicating things.</li>
+                <li><strong>Break Things (and Fix Them):</strong> Troubleshooting was—and still is—a huge part of my learning. I’ve spent hours debugging configurations and finding out why my Lambda function didn’t trigger. It’s frustrating but rewarding.</li>
+                <li><strong>Master One Tool at a Time:</strong> I made the mistake of trying to learn everything at once. Focusing on one service (like Lambda or API Gateway) really helped me get comfortable before moving on to the next challenge.</li>
+                <li><strong>Use Resources:</strong> AWS has some great docs, and the community is super helpful. Don't be afraid to ask questions and dig into resources like GitHub or StackOverflow.</li>
+            </ul>
+        </div>
         <div class="u-keyline"></div>
-    </div>
+    </section>
 
-    <div class="l-Section" id="next">
-        <h2 class="l-Section-title">What’s Next?</h2>
-        <p>So, what’s next for me? I’m currently diving into Infrastructure as Code (IaC) using Terraform and AWS CloudFormation. The goal is to automate deployments and manage cloud infrastructure more efficiently. Stay tuned for more updates as I continue this cloud journey!</p>
+    <section class="l-Section" id="next">
+        <h2 class="l-Section-title h3">What’s Next?</h2>
+        <div class="l-Section-content">
+            <p>So, what’s next for me? I’m currently diving into Infrastructure as Code (IaC) using Terraform and AWS CloudFormation. The goal is to automate deployments and manage cloud infrastructure more efficiently. Stay tuned for more updates as I continue this cloud journey!</p>
+        </div>
         <div class="u-keyline"></div>
-    </div>
-</div>
+    </section>
+</article>
 
 <footer class="l-Footer">
     <p>&copy; 2024 Tyler Bender</p>
