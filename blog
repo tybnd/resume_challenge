@@ -10,6 +10,9 @@
 <body>
 
 <header class="l-Header">
+    <div class="l-Header-col">
+        <h1 class="Title">Cloud Engineering Blog</h1>
+    </div>
     <nav class="Navbar">
         <ul>
             <li><a href="https://tycloudresume.com" class="special-link">Resume</a></li>
