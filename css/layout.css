@@ -35,10 +35,10 @@ body {
 }
 
 p {
-  font-size: 18px;
-  font-weight: 400;
+  font-size: 20px;
+  font-weight: 600;
   font-family: Hind, sans-serif;
-  color: #a6a7aa;
+  color: #202020;
   line-height: 1.4;
   margin-bottom: 15px;
 }
@@ -92,7 +92,7 @@ span {
 h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   font-family: Hind, sans-serif;
-  color: #515769;
+  color: #000000;
   line-height: 1.4;
   margin: 0 0 15px;
 }
@@ -122,7 +122,7 @@ h3 {
   font-size: 22px;
 }
 
-h4 {
+h4, h5{
   font-size: 22px;
 }
 
@@ -379,6 +379,17 @@ fieldset[disabled] .btn-theme {
   position: absolute;
   right: 0;
   bottom: 0;
+}
+
+/* Reducing white space between sections */
+#about, #latest-projects {
+  margin-bottom: 20px; /* Adjust this value as needed */
+}
+
+/* Matching font size and boldness for 'Skills' and 'About Me' */
+#about h2, #about p, .skills-section h2, .skills-section h5 {
+  font-size: 18px; /* Or any size you want */
+  font-weight: 500; /* Matching weight for boldness */
 }
 
 @media (max-width: 768px) {
