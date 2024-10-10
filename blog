@@ -2,23 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=">
     <title>Blog Post - Cloud Engineering Journey</title>
     <link rel="stylesheet" href="websitestyle.css">
+    <link rel="stylesheet" href="websitestyle.css.map">
     <link rel="icon" type="image/x-icon" href="T.png">
 </head>
 <body>
 
 <header class="l-Header">
-    <div class="l-Header-col">
-        <h1 class="Title">Cloud Engineering Blog</h1>
-    </div>
     <nav class="Navbar">
         <ul>
-            <li><a href="https://tycloudresume.com" class="special-link">Resume</a></li>
-            <li><a href="#intro" class="special-link">Introduction</a></li>
-            <li><a href="#lessons" class="special-link">Lessons Learned</a></li>
-            <li><a href="#next" class="special-link">What’s Next</a></li>
+            <li><a href="https://tycloudresume.com" class="u-link">Resume</a></li>
+            <li><a href="#intro" class="u-link">Introduction</a></li>
+            <li><a href="#lessons" class="u-link">Lessons Learned</a></li>
+            <li><a href="#next" class="u-link">What’s Next</a></li>
         </ul>
     </nav>
 </header>

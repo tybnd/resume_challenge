@@ -80,6 +80,7 @@ img {
 
 /* Link styling to match download PDF button color */
 .u-link {
+  color: #80c3da;
   display: inline;
   position: relative;
   background-position: 0 100%;
@@ -204,8 +205,17 @@ ul {
 @media (max-width: 576px) {
   .l-Wrapper--reset\@sm-down {
     width: 100%;
+    
   }
 }
+
+@media (max-width: 576px) {
+  .l-Wrapper {
+    padding-left: 0; /* Remove left padding */
+    padding-right: 0; /* Remove right padding */
+  }
+}
+
 
 .l-Header {
   margin-top: 50px;
