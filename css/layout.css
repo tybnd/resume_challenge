@@ -335,7 +335,7 @@ fieldset[disabled] .btn-theme {
 ------------------------------------------------------------------*/
 .promo-block {
   position: relative;
-  background: #9ad7eb;
+  background: #060606;
   padding-top: 220px;
 }
 
@@ -349,6 +349,9 @@ fieldset[disabled] .btn-theme {
 .promo-block .promo-block-title {
   font-size: 70px;
   line-height: 1;
+  color: #e8eaeb
+
+
 }
 
 @media (max-width: 480px) {
