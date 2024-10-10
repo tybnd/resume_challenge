@@ -408,6 +408,32 @@ fieldset[disabled] .btn-theme {
   padding: 30px;
 }
 
+.service {
+  margin-bottom: 30px; /* Space between service items */
+}
+
+@media (max-width: 768px) {
+  #experience .row {
+      display: flex;
+      flex-direction: column; /* Stack services vertically on mobile */
+      align-items: center; /* Center align items */
+  }
+
+  .service {
+      width: 100%; /* Ensure full width on mobile */
+      text-align: center; /* Center text on mobile */
+  }
+
+  .service-info h3 {
+      font-size: 24px; /* Adjust font size for headers on mobile */
+  }
+
+  .service-info p {
+      font-size: 16px; /* Adjust font size for paragraphs on mobile */
+  }
+}
+
+
 .service .service-element,
 .service .service-info {
   -webkit-transform: translate3d(0, 0, 0);
@@ -605,7 +631,7 @@ fieldset[disabled] .btn-theme {
   font-size: 13px;
   font-weight: 600;
   font-family: Hind, sans-serif;
-  color: #515769;
+  color: #0e0e0f;
   text-transform: uppercase;
   line-height: 55px;
   padding: 20px;
@@ -673,7 +699,7 @@ fieldset[disabled] .btn-theme {
   }
   /* Navbar Nav */
   .header .nav-item-child {
-    color: #515769;
+    color: #121212;
     line-height: 1.4;
     padding: 12px 12px 12px 15px;
   }
