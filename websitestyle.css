@@ -211,8 +211,9 @@ ul {
 
 @media (max-width: 576px) {
   .l-Wrapper {
-    padding: 0;/* Remove right padding */
-    margin: 0
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px; 
   }
 }
 

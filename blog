@@ -10,7 +10,7 @@
 </head>
 <body>
 
-    <nav class="Navbar" style="padding: 10px;">
+    <nav class="Navbar" style="padding: 25px;">
         <ul>
             <li><a href="https://tycloudresume.com" class="u-link">Resume</a></li>
             <li><a href="#intro" class="u-link">Introduction</a></li>
