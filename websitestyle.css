@@ -272,8 +272,9 @@ ul {
 
 .Navbar {
   display: flex;
-  align-items: center; /* Center items vertically */
-  justify-content: space-between; /* Spread items evenly across the navbar */
+  align-items: center;
+  flex-wrap: wrap; /* Center items vertically */
+  justify-content: space-around; /* Spread items evenly across the navbar */
   color: #fff;
   font-size: 1.4rem;
   font-weight: bold;
@@ -285,8 +286,14 @@ ul {
 }
 
 .Navbar ul {
-  display: flex;
-  align-items: center; /* Center the list items vertically */
+  display: flex; /* Use flexbox for the list */
+  flex-direction: row; /* Align items in a row */
+  justify-content: space-between; /* Space items evenly */
+  width: 100%; /*/* Center the list items vertically */
+}
+
+.Navbar ul li {
+  margin: 0 10px; /* Add some margin between items if needed */
 }
 
 a.Navbar-btn {
