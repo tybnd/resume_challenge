@@ -10,13 +10,9 @@
 <body>
 
 <header class="l-Header">
-    <div class="l-Header-col">
-        <h1 class="Title">Oops! Page Not Found</h1>
-    </div>
     <nav class="Navbar">
         <ul>
-            <li><a href="https://tycloudresume.com" class="special-link">Resume</a></li>
-            <li><a href="/" class="special-link">Home</a></li>
+            <li><a href="https://tycloudresume.com" class="u-link">Resume</a></li>
         </ul>
     </nav>
 </header>

@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog Post - Cloud Engineering Journey</title>
     <link rel="stylesheet" href="websitestyle.css">
-    <link rel="stylesheet" href="websitestyle.css.map">
     <link rel="icon" type="image/x-icon" href="T.png">
 </head>
 <body>
@@ -51,10 +50,6 @@
         <div class="u-keyline"></div>
     </section>
 </article>
-
-<footer class="l-Footer">
-    <p>&copy; 2024 Tyler Bender</p>
-</footer>
 
 </body>
 </html>
