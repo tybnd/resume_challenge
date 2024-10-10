@@ -273,7 +273,7 @@ ul {
 .Navbar {
   display: flex;
   align-items: center; /* Center items vertically */
-  justify-content: space-between; /* Spread items evenly across the navbar */
+  justify-content: space-evenly; /* Spread items evenly across the navbar */
   color: #fff;
   font-size: 1.4rem;
   font-weight: bold;
@@ -286,12 +286,12 @@ ul {
 
 .Navbar ul {
   display: flex;
-  align-items: center; /* Center the list items vertically */
+  align-items: space-evenly; /* Center the list items vertically */
 }
 
 a.Navbar-btn {
-  padding-left: 25px;
-  padding-right: 25px;
+  padding-left: 20px;
+  padding-right: 20px;
   background: #9ad7eb;
   height: 40px;  /* Set a fixed height for the button */
   line-height: 40px; /* Vertically centers text inside the button */
