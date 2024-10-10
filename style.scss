@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:400,700,900');
+
 @import 'mixins';
 
 // ===Color
@@ -12,22 +13,32 @@ $c-link: $c-base;
 $c-heading: $c-base-dark;
 
 // ===Base
+// Type
+$enable-fontSmoothing: true;
 $b-fontSize: 1.6rem;
 $b-fontFamily: Lato, Helvetica, Arial, sans-serif;
 $b-fontWeight: normal;
 $b-letterSpacing: 0.008em;
 $b-lineHeight: 1.5;
+// Animation
+$b-animType: ease-in-out; 
+$b-animSpeed: 0.2s;
+$b-shadowSize: 4px;
 
 // ===Navbar
 $Navbar-color: #fff;
 $Navbar-bg: #111;
 $Navbar-itemLineHeight: 4rem;
 
+// ===Footer
+$Footer-gap: unitSize(2);
+
 // ===================================
 // Basic
 //
 
 @at-root {
+
   html {
     font-size: 62.5%;
     box-sizing: border-box;
@@ -39,22 +50,23 @@ $Navbar-itemLineHeight: 4rem;
 
   body {
     margin: 0;
-    padding: 20px; // Add overall padding for spacing
     background-color: $c-bg;
-    line-height: 1.6; // Adjust line height for better readability
   }
 
   img {
     max-width: 100%;
     height: auto;
   }
+
 }
+
 
 // ==============================
 // Utilities
 //
 
 @at-root {
+
   .u-cf {
     &:before,
     &:after {
@@ -66,6 +78,27 @@ $Navbar-itemLineHeight: 4rem;
     }
   }
 
+  .u-hug {
+    margin-top: 0 !important;
+  }
+
+  .u-pullRight {
+    float: right;
+  }
+
+  .u-keyline {
+    position: relative;
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      border-top: 1px solid $c-keyline;
+    }
+  }
+
+  // Removed background image for default links
   .u-link {
     display: inline;
     position: relative;
@@ -77,38 +110,77 @@ $Navbar-itemLineHeight: 4rem;
     }
   }
 
+  // Added special link style for links like "Download PDF"
   .special-link {
-    color: $c-primary !important;
+    color: $c-primary !important; // Use primary color
     text-decoration: none;
     &:hover {
       color: darken($c-primary, 10%);
     }
   }
+
+  .u-shadow {
+    text-shadow: $b-shadowSize $b-shadowSize 0 $c-primary;
+    transition: text-shadow $b-animSpeed $b-animType;
+    @at-root a:hover #{&} {
+      text-shadow: (-$b-shadowSize) (-$b-shadowSize) 0 $c-secondary;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    .u-hidden\@sm-down {
+      display: none !important;
+    }
+  }
+
+  @include media-breakpoint-down(xs) {
+    .u-hidden\@xs-down {
+      display: none !important;
+    }
+  }
+
 }
+
 
 // ==============================
 // Typography
 // 
 
 @at-root {
+
   body {
     color: $c-base;
     font-size: $b-fontSize;
     font-family: $b-fontFamily;
     font-weight: $b-fontWeight;
     line-height: $b-lineHeight;
-    letter-spacing: $b-letterSpacing;
+    @if ($b-letterSpacing) {
+      letter-spacing: $b-letterSpacing;
+    }
+    @if ($enable-fontSmoothing) {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
   }
 
   h1, h2, h3, h4, h5, h6 {
     color: $c-heading;
     line-height: 1.2;
     font-weight: 900;
-    margin: 20px 0; // Consistent spacing around headings
+  }
+
+  h1, h2, h3, h4, h5, h6, ul, p {
+    margin-top: unitSize(2);
+    margin-bottom: 0;
+  }
+
+  h3, .h3 {
+    font-size: 2rem;
+    margin-top: unitSize(4);
   }
 
   a {
-    color: $c-link;
+    color: $c-link;  // Set default link color
     text-decoration: none;
     &:hover {
       color: darken($c-link, 10%);
@@ -117,42 +189,165 @@ $Navbar-itemLineHeight: 4rem;
 
   ul {
     padding-left: 1.8rem;
-    margin: 20px 0; // Add margin to lists
   }
+
+  .Title {
+    @include responsive-font(8vw, 42px, 75px, 50px);
+    font-family: Lato, 'Open Sans', Helvetica, Arial;
+    font-weight: 900;
+    line-height: 1.1;
+    margin-top: 0;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    display: inline-block;
+    &-sub {
+      font-size: 0.34em;
+      letter-spacing: 0.16em;
+      font-weight: 400;
+      text-transform: none;
+      display: block;
+      margin-top: unitSize(1.5);
+      padding-top: unitSize(2);
+      border-top: 0.45em solid;
+    }
+  }
+
 }
+
 
 // ==============================
 // Layout 
 // 
 
 @at-root {
+
   .l-Wrapper {
     width: 80%;
     max-width: 90rem;
     margin-left: auto;
     margin-right: auto;
   }
+  
+   @include media-breakpoint-down(sm) {
+    .l-Wrapper--reset\@sm-down {
+      width: 100%;
+    }
+  }
+
+
+  // 
+  // Header
+  // 
 
   .l-Header {
-    margin: 40px 0; // Space around header
+    margin-top: unitSize(8);
+    margin-bottom: unitSize(4);
+    &-col {
+      margin-top: unitSize(4);
+      margin-bottom: unitSize(4);
+    }
+    @include media-breakpoint-up(sm) {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      &-col {
+        &:last-child:not(:first-child) {
+          text-align: right;
+        }
+      }
+    }
+  }
+
+
+  // 
+  // Sections
+  // 
+
+  @at-root {
+
+    .l-Section {
+      margin-top: unitSize(8);
+      + .l-Section {
+        position: relative;
+        border-top: 1px solid $c-keyline;
+        &:before {
+          content: "";
+          @include responsive-font(8vw, 42px, 75px, 50px);
+          position: absolute;
+          top: unitSize(0, -0.1);
+          border-top: (0.34em * 0.45) solid;
+          width: unitSize(5);
+        }
+      }
+    }
+
+    .l-Section-title,
+    .l-Section-content {
+      margin-top: unitSize(4);
+    }
+
+    .l-Section-content {
+      > :first-child {
+        margin-top: 0;
+      }
+      > p:first-child,
+      > ul:first-child {
+        margin-top: 0.3rem;
+      }
+    }
+
+    @include media-breakpoint-up(md) {
+      .l-Section {
+        display: flex;
+        &:before {
+          display: none;
+        }
+      }
+      .l-Section-title {
+        flex: 0 0 24%;
+      }
+    }
+
+  }
+
+
+  // 
+  // Footer
+  // 
+
+  .l-Footer {
+    font-size: 1.4rem;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
-    align-items: center;
+    margin: unitSize(16) ($Footer-gap / -2) unitSize(4);
+    padding-top: unitSize(4);
+    a {
+      text-decoration: none;
+      display: inline-block;
+      &:not(:last-child) {
+        margin-right: $Footer-gap;
+      }
+      &:hover {
+        color: $c-base-dark;
+      }
+    }
+    &-col {
+      padding-left: $Footer-gap / 2;
+      padding-right: $Footer-gap / 2;
+    }
   }
 
-  .l-Section {
-    margin: 40px 0; // Space between sections
-  }
+}
 
-  // 
-  // Navbar
-  // 
+
+// ==============================
+// Navbar
+// 
+
+@at-root {
 
   .Navbar {
-    display: flex;
-    justify-content: space-around; // Use space-around for even spacing
-    align-items: center;
-    flex-wrap: wrap;
     color: $Navbar-color;
     font-size: 1rem;
     font-weight: bold;
@@ -161,25 +356,36 @@ $Navbar-itemLineHeight: 4rem;
     text-transform: uppercase;
     width: 100%;
     background-color: $Navbar-bg;
-
+    a:not(.Navbar-toggle) {
+      color: inherit;
+      text-decoration: none;
+    }
     ul {
       @extend %resetList;
     }
-
     li {
-      margin: 0 20px; // Adjust spacing between nav items
+      display: inline-block;
     }
-
     a {
       display: block;
-      padding: 10px 20px; // Consistent padding for links
+      padding: 0 unitSize(1);
     }
   }
 
   a.Navbar-btn {
-    padding: 10px 20px; // Adjust button padding for better appearance
+    padding-left: unitSize(2);
+    padding-right: unitSize(2);
     background-color: $c-primary;
     text-transform: none;
-    font-size: large;
   }
+
+  .Navbar-toggle {
+    position: relative;
+    z-index: 1;
+    margin-right: 0;
+    line-height: inherit;
+    height: 100%;
+    padding: 0;
+  }
+
 }
