@@ -286,8 +286,10 @@ ul {
 }
 
 .Navbar ul {
-  display: flex;
-  align-items: center; /* Center the list items vertically */
+  display: flex;           /* Aligns list items horizontally */
+  list-style: none;       /* Removes bullets */
+  padding: 0;             /* Resets padding */
+  margin: 0; /* Center the list items vertically */
 }
 
 a.Navbar-btn {
