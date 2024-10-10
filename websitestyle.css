@@ -263,10 +263,10 @@ ul {
 }
 
 .Navbar {
-  display: flex; /* Enable Flexbox */
-  justify-content: space-between; /* Distribute items */
-  align-items: center; /* Center vertically */
-  flex-wrap: wrap; /* Wrap items on smaller screens */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
   color: #fff;
   font-size: 1rem;
   font-weight: bold;
@@ -276,20 +276,28 @@ ul {
   width: 100%;
   background-color: #111;
 }
-.Navbar ul {
-  display: flex; /* Use flex for ul */
-  flex-wrap: wrap; /* Allow wrapping */
-  justify-content: center; /* Center ul items */
-  padding: 0;
-  margin: 0;
-}
 .Navbar li {
-  display: flex; /* Change to flex */
-  margin: 0 10px; /* Space between items */
+  display: inline-block;
 }
 .Navbar a {
   display: block;
   padding: 0 unitSize(1);
+}
+
+a.Navbar-btn {
+  padding-left: unitSize(2);
+  padding-right: unitSize(2);
+  background-color: #9ad7eb;
+  text-transform: none;
+}
+
+.Navbar-toggle {
+  position: relative;
+  z-index: 1;
+  margin-right: 0;
+  line-height: inherit;
+  height: 100%;
+  padding: 0;
 }
 
 /*# sourceMappingURL=websitestyle.css.map */

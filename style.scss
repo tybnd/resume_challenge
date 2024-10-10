@@ -348,10 +348,10 @@ $Footer-gap: unitSize(2);
 @at-root {
 
   .Navbar {
-    display: flex; /* Enable Flexbox */
-    justify-content: space-evenly; /* Distribute items */
-    align-items: center; /* Center vertically */
-    flex-wrap: wrap; /* Wrap items on smaller screens */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
     color: $Navbar-color;
     font-size: 1rem;
     font-weight: bold;
@@ -362,23 +362,33 @@ $Footer-gap: unitSize(2);
     background-color: $Navbar-bg;
 
     ul {
-        @extend %resetList;
-        display: flex; /* Use flex for ul */
-        flex-wrap: wrap; /* Allow wrapping */
-        justify-content: center; /* Center ul items */
-        padding: 0;
-        margin: 0;
+      @extend %resetList;
     }
 
     li {
-        display: flex; /* Change to flex */
-        margin: 0 10px; /* Space between items */
+      display: inline-block;
     }
-
+    
     a {
-        display: block;
-        padding: 0 unitSize(1);
+      display: block;
+      padding: 0 unitSize(1);
     }
-}
+  }
+
+  a.Navbar-btn {
+    padding-left: unitSize(2);
+    padding-right: unitSize(2);
+    background-color: $c-primary;
+    text-transform: none;
+  }
+
+  .Navbar-toggle {
+    position: relative;
+    z-index: 1;
+    margin-right: 0;
+    line-height: inherit;
+    height: 100%;
+    padding: 0;
+  }
 
 }
