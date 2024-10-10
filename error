@@ -2,74 +2,37 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=.75">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Error - Page Not Found</title>
     <link rel="stylesheet" href="websitestyle.css">
-    <link rel="stylesheet" href="websitestyle.css.map">
-    <link rel="icon" type="image/x-icon" href="T.png">
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f5f5f5;
-            font-family: 'Poppins', sans-serif;
-            color: #2e2e2e;
-            margin: 0;
-        }
-
-        .error-container {
-            text-align: center;
-            padding: 20px;
-            background-color: #fff;
-            border: 2px solid #cccccc;
-            border-radius: 8px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        h1 {
-            font-size: 3rem;
-            color: #333;
-            margin-bottom: 20px;
-        }
-
-        p {
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-        }
-
-        a {
-            color: #006699;
-            font-weight: bold;
-            text-decoration: none;
-            font-size: 1.25rem;
-        }
-
-        a:hover {
-            text-decoration: underline;
-            color: #004466;
-        }
-
-        .home-link {
-            display: inline-block;
-            margin-top: 15px;
-            padding: 10px 20px;
-            background-color: #000;
-            color: #fff;
-            border-radius: 5px;
-        }
-
-        .home-link:hover {
-            background-color: #333;
-        }
-    </style>
 </head>
 <body>
-    <div class="error-container">
-        <h1>Oops!</h1>
-        <p>There was an error. Please go back to the homepage.</p>
-        <a class="home-link" href="index.html">Go Home</a>
+
+<header class="l-Header">
+    <div class="l-Header-col">
+        <h1 class="Title">Oops! Page Not Found</h1>
     </div>
+    <nav class="Navbar">
+        <ul>
+            <li><a href="https://tycloudresume.com" class="special-link">Resume</a></li>
+            <li><a href="/" class="special-link">Home</a></li>
+        </ul>
+    </nav>
+</header>
+
+<article class="l-Wrapper">
+    <section class="l-Section">
+        <h2 class="l-Section-title h3">404 Error - This page does not exist.</h2>
+        <div class="l-Section-content">
+            <p>It seems the page you're looking for is unavailable. Please check the URL or head back to the homepage.</p>
+            <a href="/" class="Navbar-btn">Go to Homepage</a>
+        </div>
+    </section>
+</article>
+
+<footer class="l-Footer">
+    <p>&copy; 2024 Tyler Bender</p>
+</footer>
+
 </body>
 </html>
