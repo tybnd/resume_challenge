@@ -272,8 +272,9 @@ ul {
 
 .Navbar {
   display: flex;
-  align-items: center; /* Center items vertically */
-  justify-content: space-evenly; /* Spread items evenly across the navbar */
+  justify-content: center; /* Centers items horizontally */
+  align-items: center;     /* Centers items vertically */
+  flex-wrap: wrap;  
   color: #fff;
   font-size: 1.4rem;
   font-weight: bold;
