@@ -271,7 +271,10 @@ ul {
 }
 
 .Navbar {
-  display: flex;
+  display: flex; /* Keep list items in a row */
+  padding: 10px; /* Remove padding */
+  margin: 0px; /* Remove margin */
+  list-style: none;
   justify-content: space-evenly;
   flex-wrap: nowrap; /* Ensure items are in a single line */
   color: #fff;
@@ -291,7 +294,7 @@ ul {
 }
 
 .Navbar ul li {
-  margin: 0 10px; /* Adjust margin for spacing */
+  margin: 0 15px; /* Adjust margin for spacing */
 }
 
 .Navbar a.Navbar-btn {
