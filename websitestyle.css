@@ -276,8 +276,16 @@ ul {
   color: inherit;
   text-decoration: none;
 }
+.Navbar ul {
+  display: flex; /* Use flex for ul */
+  flex-wrap: wrap; /* Allow wrapping */
+  justify-content: center; /* Center ul items */
+  padding: 0;
+  margin: 0;
+}
 .Navbar li {
   display: inline-block;
+  margin: 0 10px;
 }
 .Navbar a {
   display: block;
