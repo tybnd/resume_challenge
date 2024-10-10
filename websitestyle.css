@@ -193,8 +193,8 @@ ul {
 }
 
 .l-Wrapper {
-  width: 100%;
-  max-width: 100rem;
+  width: 90%;
+  max-width: 95rem;
   margin: 0 auto; /* Center the wrapper */
   padding: 0; /* Remove padding */
 }
