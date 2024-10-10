@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:400,700,900');
+
 @import 'mixins';
 
 // ===Color
@@ -37,6 +38,7 @@ $Footer-gap: unitSize(2);
 //
 
 @at-root {
+
   html {
     font-size: 62.5%;
     box-sizing: border-box;
@@ -48,7 +50,6 @@ $Footer-gap: unitSize(2);
 
   body {
     margin: 0;
-    padding: 20px; // Add padding for overall spacing
     background-color: $c-bg;
   }
 
@@ -56,13 +57,16 @@ $Footer-gap: unitSize(2);
     max-width: 100%;
     height: auto;
   }
+
 }
+
 
 // ==============================
 // Utilities
 //
 
 @at-root {
+
   .u-cf {
     &:before,
     &:after {
@@ -94,6 +98,7 @@ $Footer-gap: unitSize(2);
     }
   }
 
+  // Removed background image for default links
   .u-link {
     display: inline;
     position: relative;
@@ -105,8 +110,9 @@ $Footer-gap: unitSize(2);
     }
   }
 
+  // Added special link style for links like "Download PDF"
   .special-link {
-    color: $c-primary !important;
+    color: $c-primary !important; // Use primary color
     text-decoration: none;
     &:hover {
       color: darken($c-primary, 10%);
@@ -132,13 +138,16 @@ $Footer-gap: unitSize(2);
       display: none !important;
     }
   }
+
 }
+
 
 // ==============================
 // Typography
 // 
 
 @at-root {
+
   body {
     color: $c-base;
     font-size: $b-fontSize;
@@ -158,16 +167,20 @@ $Footer-gap: unitSize(2);
     color: $c-heading;
     line-height: 1.2;
     font-weight: 900;
-    margin: 30px 0; // Increased margin for more spacing around headings
+  }
+
+  h1, h2, h3, h4, h5, h6, ul, p {
+    margin-top: unitSize(2);
+    margin-bottom: 0;
   }
 
   h3, .h3 {
     font-size: 2rem;
-    margin-top: 40px; // Space above h3 for better separation
+    margin-top: unitSize(4);
   }
 
   a {
-    color: $c-link;
+    color: $c-link;  // Set default link color
     text-decoration: none;
     &:hover {
       color: darken($c-link, 10%);
@@ -176,7 +189,6 @@ $Footer-gap: unitSize(2);
 
   ul {
     padding-left: 1.8rem;
-    margin: 20px 0; // Margin to create space around lists
   }
 
   .Title {
@@ -184,7 +196,8 @@ $Footer-gap: unitSize(2);
     font-family: Lato, 'Open Sans', Helvetica, Arial;
     font-weight: 900;
     line-height: 1.1;
-    margin: 40px 0; // More spacing for the title
+    margin-top: 0;
+    margin-bottom: 0;
     text-transform: uppercase;
     display: inline-block;
     &-sub {
@@ -193,18 +206,21 @@ $Footer-gap: unitSize(2);
       font-weight: 400;
       text-transform: none;
       display: block;
-      margin-top: 20px; // Adjusted for more spacing
+      margin-top: unitSize(1.5);
       padding-top: unitSize(2);
       border-top: 0.45em solid;
     }
   }
+
 }
+
 
 // ==============================
 // Layout 
 // 
 
 @at-root {
+
   .l-Wrapper {
     width: 80%;
     max-width: 90rem;
@@ -212,22 +228,23 @@ $Footer-gap: unitSize(2);
     margin-right: auto;
   }
   
-  @include media-breakpoint-down(sm) {
+   @include media-breakpoint-down(sm) {
     .l-Wrapper--reset\@sm-down {
       width: 100%;
     }
   }
+
 
   // 
   // Header
   // 
 
   .l-Header {
-    margin-top: 80px; // Increased margin for more separation
-    margin-bottom: 40px; 
+    margin-top: unitSize(8);
+    margin-bottom: unitSize(4);
     &-col {
-      margin-top: 40px; 
-      margin-bottom: 40px; 
+      margin-top: unitSize(4);
+      margin-bottom: unitSize(4);
     }
     @include media-breakpoint-up(sm) {
       display: flex;
@@ -241,13 +258,15 @@ $Footer-gap: unitSize(2);
     }
   }
 
+
   // 
   // Sections
   // 
 
   @at-root {
+
     .l-Section {
-      margin-top: 80px; // More space between sections
+      margin-top: unitSize(8);
       + .l-Section {
         position: relative;
         border-top: 1px solid $c-keyline;
@@ -264,7 +283,7 @@ $Footer-gap: unitSize(2);
 
     .l-Section-title,
     .l-Section-content {
-      margin-top: 40px; // Increased margin for more spacing
+      margin-top: unitSize(4);
     }
 
     .l-Section-content {
@@ -288,7 +307,9 @@ $Footer-gap: unitSize(2);
         flex: 0 0 24%;
       }
     }
+
   }
+
 
   // 
   // Footer
@@ -316,13 +337,16 @@ $Footer-gap: unitSize(2);
       padding-right: $Footer-gap / 2;
     }
   }
+
 }
+
 
 // ==============================
 // Navbar
 // 
 
 @at-root {
+
   .Navbar {
     color: $Navbar-color;
     font-size: 1rem;
@@ -341,11 +365,10 @@ $Footer-gap: unitSize(2);
     }
     li {
       display: inline-block;
-      margin: 0 20px; // Adjusted margin for spacing between items
     }
     a {
       display: block;
-      padding: 10px 15px; // Consistent padding for links
+      padding: 0 unitSize(1);
     }
   }
 
@@ -362,14 +385,7 @@ $Footer-gap: unitSize(2);
     margin-right: 0;
     line-height: inherit;
     height: 100%;
-    padding: To add more spacing between elements in your CSS, you can adjust the margin and padding values for various elements. Here are some suggestions:
+    padding: 0;
   }
 
-   .u-margin-top {
-       margin-top: 2rem; // or adjust as needed
-   }
-
-   .u-margin-bottom {
-       margin-bottom: 2rem; // or adjust as needed
-   }
-  }
+}
