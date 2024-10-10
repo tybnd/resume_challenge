@@ -39,15 +39,15 @@ $Navbar-itemLineHeight: 4rem;
 
   body {
     margin: 0;
-    padding: 20px; // Add padding to body for spacing
+    padding: 20px; // Add overall padding for spacing
     background-color: $c-bg;
+    line-height: 1.6; // Adjust line height for better readability
   }
 
   img {
     max-width: 100%;
     height: auto;
   }
-
 }
 
 // ==============================
@@ -104,7 +104,7 @@ $Navbar-itemLineHeight: 4rem;
     color: $c-heading;
     line-height: 1.2;
     font-weight: 900;
-    margin: 20px 0; // Space above and below headings
+    margin: 20px 0; // Consistent spacing around headings
   }
 
   a {
@@ -113,6 +113,11 @@ $Navbar-itemLineHeight: 4rem;
     &:hover {
       color: darken($c-link, 10%);
     }
+  }
+
+  ul {
+    padding-left: 1.8rem;
+    margin: 20px 0; // Add margin to lists
   }
 }
 
@@ -126,18 +131,17 @@ $Navbar-itemLineHeight: 4rem;
     max-width: 90rem;
     margin-left: auto;
     margin-right: auto;
-    padding: 20px; // Add padding around wrapper
   }
 
   .l-Header {
-    margin: 40px 0; // Space above and below header
+    margin: 40px 0; // Space around header
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
 
   .l-Section {
-    margin: 30px 0; // Space between sections
+    margin: 40px 0; // Space between sections
   }
 
   // 
@@ -146,7 +150,7 @@ $Navbar-itemLineHeight: 4rem;
 
   .Navbar {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around; // Use space-around for even spacing
     align-items: center;
     flex-wrap: wrap;
     color: $Navbar-color;
@@ -158,12 +162,17 @@ $Navbar-itemLineHeight: 4rem;
     width: 100%;
     background-color: $Navbar-bg;
 
+    ul {
+      @extend %resetList;
+    }
+
     li {
-      margin: 0 15px; // Add horizontal space between nav items
+      margin: 0 20px; // Adjust spacing between nav items
     }
 
     a {
-      padding: 0 unitSize(1);
+      display: block;
+      padding: 10px 20px; // Consistent padding for links
     }
   }
 
@@ -173,5 +182,4 @@ $Navbar-itemLineHeight: 4rem;
     text-transform: none;
     font-size: large;
   }
-
 }
