@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<!-- saved from url=(0055)file:///C:/Users/tytyb/.aws/resume_challenge/index.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=.75"> <!-- Updated for mobile responsiveness -->
+    <title>Tyler Bender's Cloud Resume Challenge</title>
+    <link rel="stylesheet" href="./TylerB&#39;s_CloudResume_files/websitestyle.css">
+    <link rel="stylesheet" href="./TylerB&#39;s_CloudResume_files/websitestyle.css.map">
+    <link rel="icon" type="image/x-icon" href="file:///C:/Users/tytyb/.aws/resume_challenge/T.png">
+</head>
+<body>
+
+<nav class="Navbar">
+  <div class="l-Wrapper l-Wrapper--reset@sm-down">
+    <ul class="u-pullRight u-hidden@xs-down">
+      <li>
+        <a class="Navbar-btn Navbar-btn--main" download="https://tycloudresume.com" target="_blank">Download 
+          <span>(pdf)</span>
+        </a>
+      </li>
+    </ul>
+    <ul>
+      <li><a href="https://www.linkedin.com/in/tyler-b-960aa2217/" target="_blank"><img src="./TylerB&#39;s_CloudResume_files/linkd.png" style="width: 60px;"></a></li>
+      <li><a href="https://github.com/tybnd" target="_blank"><img src="./TylerB&#39;s_CloudResume_files/git.png" style="width: 60px;"></a></li>
+    </ul>
+  </div>
+</nav>
+
+<article class="l-Wrapper">
+
+  <div class="l-Header">
+    <div class="l-Header-col">
+      <h1 class="Title">
+        <span class="u-shadow">
+          Tyler<br>
+          Bender's<br>
+          Cloud Resume
+        </span>
+        <span class="Title-sub"><div style="font-size: 2rem;">Aspiring Cloud Engineer </div><br>
+            <div style="font-size: 1.5rem;" id="replaceme">Total Visitors: 602</div></span>
+        
+      </h1>
+    </div>
+    <div class="l-Header-col Contact">
+      <div>West Deptford, NJ</div>
+      <div><a class="special-link" href="https://tycloudresume.com/" target="_blank">tycloudresume.com</a></div>
+      <div><a class="special-link" href="mailto:tytybender55@gmail.com" target="_blank">tytybender55@gmail.com</a></div>
+    </div>
+  </div>
+
+  <section class="l-Section" id="about">
+    <h2 class="l-Section-title h3">About</h2>
+    <div class="l-Section-content">
+      <p>Aspiring Cloud Engineer with a solid foundation in Python programming, GitHub, and AWS Cloud Services. Experienced in building cloud infrastructure using serverless architectures and API integration. Known for problem-solving, especially when overcoming complex technical challenges in cloud environments. Passionate about troubleshooting, optimizing cloud setups for efficiency, and continuously expanding my expertise in cloud technologies.</p>
+    </div>
+  </section>
+
+  <section class="l-Section" id="skills">
+    <h2 class="l-Section-title h3">Skills</h2>
+    <div class="l-Section-content">
+      <ul>
+        <ul>
+        <li>AWS Cloud Services (Lambda, S3, etc.)</li>
+        <li>Python Programming</li>
+        <li>SQL Databases</li>
+        <li>Serverless Architecture</li>
+        <li>API Development</li>
+        <li>Technical Support</li>
+        <li>JSON &amp; YAML Syntax</li>
+        <li>GitHub Version Control</li>
+        <li>Infrastructure as Code (IaC)</li>
+        <li>Powershell</li>
+        <li>Monitoring &amp; Logging (CloudWatch)</li>
+        <li>Troubleshooting &amp; Debugging</li>
+    </ul>
+      </ul>
+    </div>
+  </section>
+
+  <section class="l-Section" id="projects">
+    <h2 class="l-Section-title h3">Projects</h2>
+    <div class="l-Section-content">
+      <ul>
+          <strong style="font-size: larger;"><a class="special-link" href="https://tycloudresume.com/">Cloud Resume Challenge</a></strong>
+        <ul>
+          <li>Built a serverless resume using AWS services such as Lambda, API Gateway, and S3.</li>
+          <li>Dynamic updates for visitor counts through API calls.</li>
+          <li>Showcases skills in cloud engineering and serverless architecture.</li>
+        </ul>
+
+        <ul>
+          <strong style="font-size: larger;"><a class="special-link" href="https://webplox.com/">Webplox</a></strong>
+          <li>Created a web design and SEO service focusing on improving business' online presence.</li>
+          <li>Developed custom websites and implemented SEO strategies to increase local searches.</li>
+          </ul>
+        <ul>
+        <strong style="font-size: larger;"><a class="special-link" href="https://mellonfamilylawncare.com/">Mellon Family Lawn Care</a></strong>
+          <li>Designed a responsive website for a local lawn care company (ranked #1 on Google).</li>
+          <li>Assisted with technical support issues, and debugging common website errors.</li>
+        </ul>
+
+        <ul>
+          <strong style="font-size: larger;"><a class="special-link" href="https://tricountysealcoating.com/">Tri-County Sealcoating</a></strong>
+          <li>Developed a custom website to enhance visibility for a local asphalt business.</li>
+          <li>Effective SEO strategies to drive traffic and conversions.</li>
+        </ul>
+      </ul>
+    </div>
+  </section>
+
+</article>
+
+
+<footer id="contact">
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            async function updateVisitorCount() {
+                try {
+                    console.log('Sending PUT request...');
+                    const putResponse = await fetch('https://juop84rxae.execute-api.us-east-1.amazonaws.com/Prod/put?ID=123', {
+                        method: 'PUT',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({ ID: "123" })
+                    });
+                    if (!putResponse.ok) throw new Error(`PUT failed: ${putResponse.status}`);
+                    
+                    console.log('PUT successful, now sending GET request...');
+                    const getResponse = await fetch('https://juop84rxae.execute-api.us-east-1.amazonaws.com/Prod/get');
+                    if (!getResponse.ok) throw new Error(`GET failed: ${getResponse.status}`);
+                    
+                    const data = await getResponse.json();
+                    console.log('GET response data:', data);
+                    
+                    const parsedBody = JSON.parse(data.body);
+        
+                    if (parsedBody && parsedBody.visitorCount !== undefined) {
+                        document.getElementById('replaceme').innerText = `Total Visitors: ${parsedBody.visitorCount}`;
+                    } else {
+                        document.getElementById('replaceme').innerText = 'Error';
+                        console.error('VisitorCount not found in the response');
+                    }
+                } catch (error) {
+                    console.error('API call error:', error);
+                }
+            }
+
+            updateVisitorCount();
+        });
+    </script>
+</footer>
+
+
+
+
+</body></html>
