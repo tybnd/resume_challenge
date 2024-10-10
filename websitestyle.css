@@ -348,3 +348,35 @@ a.Navbar-btn:hover {
   background-color: rgba(154, 215, 235, 0.5);
   transition: all 0.8s 0.4s;
 }
+
+@media print {
+  html {
+    font-size: 50%;
+  }
+
+  .l-Wrapper {
+    width: 100%;
+    max-width: none;
+  }
+
+  .Navbar, .u-hidden\@print {
+    display: none;
+  }
+
+  .l-Header, .l-Header-col {
+    margin-top: 0;
+  }
+
+  .l-Footer, .l-Section {
+    margin-top: 30px;
+  }
+
+  h2, h3, li {
+    page-break-after: avoid;
+    color: red;
+  }
+}
+
+@page {
+  margin: 2.2cm 2.2cm 1.8cm;
+}
