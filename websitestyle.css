@@ -306,8 +306,8 @@ ul {
 
 a.Navbar-btn {
   vertical-align: middle;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 25px;
+  padding-right: 25px;
   background: #9ad7eb;
   height: 40px;  /* Set a fixed height for the button */
   line-height: 40px; /* Vertically centers text inside the button */
