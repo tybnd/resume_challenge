@@ -10,7 +10,6 @@
 </head>
 <body>
 
-<header class="l-Header">
     <nav class="Navbar">
         <ul>
             <li><a href="https://tycloudresume.com" class="u-link">Resume</a></li>
@@ -19,7 +18,6 @@
             <li><a href="#next" class="u-link">What’s Next</a></li>
         </ul>
     </nav>
-</header>
 
 <article class="l-Wrapper">
     <section class="l-Section" id="intro">
