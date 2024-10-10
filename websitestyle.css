@@ -16,7 +16,7 @@
 
 html {
   font-size: 65%; /* Slightly larger font size */
-  box-sizing: border-box;
+  box-sizing: content-box;
 }
 
 *, *:before, *:after {
@@ -127,8 +127,8 @@ h1, h2, h3, h4, h5, h6 {
   color: #111;
   line-height: 1.2;
   font-weight: 900;
-  margin-top: 10px; /* Decreased from 20px */
-  margin-bottom: 10px; /* Decreased from 20px */
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 h1 {
@@ -195,7 +195,7 @@ ul {
 }
 
 .l-Wrapper {
-  width: 85%;
+  width: 90%;
   max-width: 96rem;
   margin-left: auto;
   margin-right: auto;
@@ -203,12 +203,19 @@ ul {
 }
 
 @media (max-width: 576px) {
-  .l-Wrapper {
+  .l-Wrapper--reset\@sm-down {
     width: 100%;
-    padding-left: 10px;
-    padding-right: 10px; 
+    
   }
 }
+
+@media (max-width: 576px) {
+  .l-Wrapper {
+    padding: 0;/* Remove right padding */
+    margin: 0
+  }
+}
+
 
 .l-Header {
   margin-top: 50px;
@@ -275,7 +282,7 @@ ul {
 
 .Navbar {
   display: flex; /* Keep list items in a row */
-  padding: 5px; /* Reduced padding */
+  padding: 10px; /* Remove padding */
   margin: 0px; /* Remove margin */
   list-style: none;
   justify-content: space-evenly;
@@ -301,6 +308,7 @@ ul {
 }
 
 .Navbar a.Navbar-btn {
+  
   background: #9ad7eb;
   height: 40px; /* Set a fixed height for the button */
   line-height: 40px; /* Center text vertically */
@@ -346,7 +354,14 @@ a.Navbar-btn:hover {
   margin: auto;
   border-radius: 0.2rem;
   background-color: rgba(154, 215, 235, 0.5);
-  transition: all 0.8s 0.4s;
+  transition: all 0.8s 0.4s ease-in-out;
+}
+
+.Tag:hover:before {
+  transform: scale(1.05, 2.4);
+  background-color: #9ad7eb;
+  transition-delay: 0s;
+  transition-duration: 0.2s;
 }
 
 @media print {
