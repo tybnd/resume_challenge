@@ -377,6 +377,7 @@ fieldset[disabled] .btn-theme {
 
 .promo-block .promo-block-img {
   position: absolute;
+  border-radius: 50%;
   right: 0;
   bottom: 0;
 }
