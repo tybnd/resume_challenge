@@ -1,6 +1,6 @@
 Hello all!
 
-I am Tyler, an aspiring cloud engineer. This is my first project using AWS and other resources to build my Cloud Resume. I built my resume using a multitude of different resources, in specific:
+I am Tyler, an aspiring cloud engineer. This is my first cloud project. I built my resume using a multitude of different resources, in specific:
 
 - AWS Serverless Application Model (SAM)
 - AWS CloudFormation
