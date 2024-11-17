@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cloud Inventory Manager</title>
+  <link rel="icon" href="LOGO.png" type="image/png">
   <style>
     /* Reset styles */
     * {
@@ -116,7 +117,9 @@
         padding: 10px;
       }
     }
+    
   </style>
+  
 </head>
 <body>
   <div class="container">
