@@ -148,7 +148,8 @@
         if (!response.ok) throw new Error("Network response was not ok");
   
         const data = await response.json();
-        const items = JSON.parse(data.body); // Parse the `body` field to get the array of items
+        // Assuming 'body' contains an array of items
+        const items = data.body; // If body already contains the array of items
   
         populateTable(items);
       } catch (error) {
