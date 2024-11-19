@@ -42,7 +42,7 @@
     /* Card container */
     .card {
       background-color: #1e293b;
-      padding: 20px;
+      padding: 40px 20px; /* Added top and bottom padding */
       border-radius: 4px;
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
       width: 100%;
@@ -101,7 +101,7 @@
     /* Mobile responsiveness */
     @media (max-width: 600px) {
       .card {
-        padding: 0; /* Remove padding */
+        padding: 20px 10px; /* Reduced padding for mobile but kept top/bottom padding */
       }
 
       h1 {
