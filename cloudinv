@@ -141,8 +141,8 @@
           <th>Status</th>
         </tr>
       </thead>
-      <tbody id="inventoryBody" style="padding-top: 3%; padding-bottom: 3%;">LOADING...
-        <!-- Dynamic content will go here -->
+      <tbody id="inventoryBody" style="padding-top: 3%; padding-bottom: 3%;">
+        LOADING...
       </tbody>
     </table>
     <button id="refreshButton">Refresh</button>
