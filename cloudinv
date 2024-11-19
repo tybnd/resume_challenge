@@ -38,6 +38,23 @@
       color: #94a3b8;
       margin-bottom: 20px;
     }
+    .spinner {
+      border: 4px solid rgba(255, 255, 255, 0.3); /* Light border */
+      border-top: 4px solid #ffffff; /* Darker border for animation */
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      animation: spin 1s linear infinite; /* Smooth spinning */
+    }
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 
     /* Card container */
     .card {
@@ -143,7 +160,10 @@
       </thead>
       <tbody id="inventoryBody">
         <tr id="loadingRow">
-          <td colspan="3" style="text-align: center; color: #94a3b8;">Loading resources...</td>
+          <td colspan="3" style="text-align: center;">
+            <div class="spinner"></div>
+            <span style="color: #94a3b8;">Loading resources...</span>
+          </td>
         </tr>
       </tbody>
     </table>
