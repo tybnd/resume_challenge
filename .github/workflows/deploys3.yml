@@ -47,10 +47,9 @@ jobs:
 
       - name: Improved Copy
         run: |
-          aws-vault exec laptop_t 
-          -- aws s3 cp s3://tylerb-resume-site/cloudinv s3://tylerb-resume-site/cloudinv \
-          --content-type "text/html" \
-          --metadata-directive "REPLACE"
+          aws s3 cp s3://tylerb-resume-site/cloudinv s3://tylerb-resume-site/cloudinv \
+            --content-type "text/html" \
+            --metadata-directive "REPLACE"
         
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
