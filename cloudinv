@@ -54,7 +54,7 @@
     table {
       width: 100%;
       border-collapse: collapse;
-      margin-top: 20px;
+      margin: 20px 0;
     }
 
     th, td {
@@ -83,19 +83,25 @@
     /* Button styling */
     button {
       margin-top: 20px;
-      padding: 12px 20px;
+      padding: 15px;
+      width: 60px;
+      height: 60px;
       background-color: #157307;
       color: white;
       border: none;
-      border-radius: 8px;
-      font-size: 1rem;
+      border-radius: 50%;
+      font-size: 1.5rem;
       font-weight: bold;
       cursor: pointer;
-      transition: background-color 0.3s ease;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     button:hover {
       background-color: #0ea130;
+      transform: scale(1.1);
     }
 
     /* Mobile responsiveness */
@@ -110,6 +116,12 @@
 
       th, td {
         padding: 10px;
+      }
+
+      button {
+        width: 70px;
+        height: 70px;
+        font-size: 2rem;
       }
     }
   </style>
