@@ -131,13 +131,15 @@
         <tr>
           <th>Item</th>
           <th>Quantity</th>
-          <th>Update <button onclick="fetchInventory()">Refresh Resources</button>
-          </th>
-          
+          <th>Update</th>
         </tr>
       </thead>
       <tbody id="inventoryBody"></tbody>
     </table>
+    <button onclick="fetchInventory()" style="margin-top: 20px; padding: 10px; background-color: #00d4ff; color: #fff; border: none; border-radius: 4px; cursor: pointer;">
+      Refresh Resources
+    </button>
+    
   </div>
 
   <script>
