@@ -131,7 +131,7 @@
         <!-- Dynamic content will go here -->
       </tbody>
     </table>
-    <button id="refreshButton">Refresh Inventory</button>
+    <button id="refreshButton">⟳</button>
   </div>
 
   <script>
