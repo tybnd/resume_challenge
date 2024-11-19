@@ -48,6 +48,7 @@
       color: #d1d1d1;
       margin-bottom: 20px;
     }
+    
 
     /* Table styling */
     table {
@@ -82,13 +83,13 @@
 
     /* Button styling */
     button {
-      background-color: #007bff;
-      color: #fff;
-      border: none;
-      padding: 8px 16px;
-      border-radius: 4px;
+      margin: 10px 0; 
+      padding: 10px; 
+      background-color: #00d4ff; 
+      color: #fff; 
+      border: none; 
+      border-radius: 4px; 
       cursor: pointer;
-      transition: background-color 0.3s ease;
     }
 
     button:hover {
