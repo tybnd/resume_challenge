@@ -145,44 +145,34 @@
 
   <script>
     const apiUrl = "https://mhc2vkfs17.execute-api.us-east-1.amazonaws.com/Prod";
-  
+
     // Fetch all inventory items and populate the table
     async function fetchInventory() {
       try {
         const response = await fetch(`${apiUrl}/get-all`);
+
         if (!response.ok) throw new Error("Failed to fetch resources");
 
         const data = await response.json();
-        const items = Array.isArray(data) ? data : JSON.parse(data);
-
-        populateTable(items);
+        
+        // Check if the response contains the 'body' field
+        if (data.body) {
+          const items = Array.isArray(data.body) ? data.body : JSON.parse(data.body);
+          populateTable(items);
+        } else {
+          // Handle the case where the response doesn't have a 'body' field
+          console.error("Invalid response structure:", data);
+          alert("Invalid response format from the server.");
+        }
       } catch (error) {
         console.error("Error fetching resources:", error);
         alert("Could not load resources. Please try again later.");
       }
     }
 
-    // Populate the table with items
-    function populateTable(items) {
-      const tableBody = document.getElementById("inventoryBody");
-      tableBody.innerHTML = ""; // Clear existing rows
-      items.forEach(item => {
-        const row = document.createElement("tr");
-  
-        const nameCell = document.createElement("td");
-        nameCell.textContent = item.ID;
-        row.appendChild(nameCell);
-  
-        const quantityCell = document.createElement("td");
-        quantityCell.textContent = item.Quantity;
-        row.appendChild(quantityCell);
-  
-        tableBody.appendChild(row);
-      });
-    }
-
-    // Initial fetch (Optional)
+    // Initial fetch to populate the table
     fetchInventory();
+
   </script>
 </body>
 </html>
