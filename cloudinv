@@ -143,7 +143,7 @@
         <!-- Dynamic content will go here -->
       </tbody>
     </table>
-    <button id="refreshButton">&#10227;</button>
+    <button id="refreshButton">⟳</button>
   </div>
 
   <script>
