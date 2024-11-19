@@ -153,7 +153,7 @@
         if (!response.ok) throw new Error("Failed to fetch resources");
 
         const data = await response.json();
-        const items = Array.isArray(data.body) ? data.body : JSON.parse(data.body);
+        const items = Array.isArray(data) ? data : JSON.parse(data);
 
         populateTable(items);
       } catch (error) {
@@ -162,7 +162,6 @@
       }
     }
 
-  
     // Populate the table with items
     function populateTable(items) {
       const tableBody = document.getElementById("inventoryBody");
@@ -175,53 +174,14 @@
         row.appendChild(nameCell);
   
         const quantityCell = document.createElement("td");
-        quantityCell.innerHTML = `<input type="number" value="${item.Quantity}" id="quantity-${item.ID}">`;
+        quantityCell.textContent = item.Quantity;
         row.appendChild(quantityCell);
-  
-        const updateCell = document.createElement("td");
-        const updateButton = document.createElement("button");
-        updateButton.textContent = "Update";
-        updateButton.onclick = () => updateItem(item.ID);
-        updateCell.appendChild(updateButton);
-        row.appendChild(updateCell);
   
         tableBody.appendChild(row);
       });
     }
-  
-    // Update item quantity using the PUT API call
-    async function updateItem(id) {
-      const quantityInput = document.getElementById(`quantity-${id}`);
-      const newQuantity = parseInt(quantityInput.value);
 
-      if (isNaN(newQuantity) || newQuantity < 0) {
-        alert("Please enter a valid quantity.");
-        return;
-      }
-
-      try {
-        quantityInput.disabled = true; // Disable input during the update
-
-        const response = await fetch(`${apiUrl}/put?ID=${id}`, {
-          method: "PUT",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify({ ID: id, Quantity: newQuantity })
-        });
-
-        if (!response.ok) throw new Error("Update failed");
-
-        alert(`Successfully updated resource: ${id}`);
-      } catch (error) {
-        console.error("Error updating resource:", error);
-        alert(`Failed to update resource: ${id}`);
-      } finally {
-        quantityInput.disabled = false; // Re-enable input after update
-      }
-    }
-
-    // Initial fetch
+    // Initial fetch (Optional)
     fetchInventory();
   </script>
 </body>
