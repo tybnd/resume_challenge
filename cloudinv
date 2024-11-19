@@ -144,6 +144,14 @@
     const apiUrl = "https://mhc2vkfs17.execute-api.us-east-1.amazonaws.com/Prod";
 
     // Function to populate the table with items
+    function truncateText(text, maxLength) {
+      if (text.length > maxLength) {
+        return `<span title="${text}">${text.slice(0, maxLength)}...</span>`;
+      }
+      return text;
+    }
+
+    // Function to populate the table with items
     function populateTable(items) {
       const tableBody = document.getElementById("inventoryBody");
       tableBody.innerHTML = ""; // Clear existing rows
@@ -152,7 +160,8 @@
         const row = document.createElement("tr");
 
         const idCell = document.createElement("td");
-        idCell.textContent = item.ID;
+        // Truncate 'ID' to a maximum length of 20 characters for display
+        idCell.innerHTML = truncateText(item.ID, 20);
         row.appendChild(idCell);
 
         const typeCell = document.createElement("td");
@@ -166,7 +175,6 @@
         tableBody.appendChild(row);
       });
     }
-
     // Fetch all inventory items
     async function fetchInventory() {
       try {
