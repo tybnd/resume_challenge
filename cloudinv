@@ -145,20 +145,15 @@
     async function fetchInventory() {
       try {
         const response = await fetch(`${apiUrl}/get-all`);
-        if (!response.ok) throw new Error("Network response was not ok");
+        if (!response.ok) throw new Error("Failed to fetch resources");
 
         const data = await response.json();
-        
-        // Log the raw response and the body
-        console.log("Raw data:", data);
-        console.log("Parsed body:", data.body);
-
-        // Try to parse and handle the response correctly
-        const items = Array.isArray(data.body) ? data.body : JSON.parse(data.body); // Check if body is an array
+        const items = Array.isArray(data.body) ? data.body : JSON.parse(data.body);
 
         populateTable(items);
       } catch (error) {
-        console.error("Error fetching inventory:", error);
+        console.error("Error fetching resources:", error);
+        alert("Could not load resources. Please try again later.");
       }
     }
 
@@ -192,28 +187,35 @@
     // Update item quantity using the PUT API call
     async function updateItem(id) {
       const quantityInput = document.getElementById(`quantity-${id}`);
-      const newQuantity = quantityInput.value;
-  
+      const newQuantity = parseInt(quantityInput.value);
+
+      if (isNaN(newQuantity) || newQuantity < 0) {
+        alert("Please enter a valid quantity.");
+        return;
+      }
+
       try {
-        quantityInput.disabled = true;
+        quantityInput.disabled = true; // Disable input during the update
+
         const response = await fetch(`${apiUrl}/put?ID=${id}`, {
           method: "PUT",
           headers: {
             "Content-Type": "application/json"
           },
-          body: JSON.stringify({ ID: id, Quantity: parseInt(newQuantity) })
+          body: JSON.stringify({ ID: id, Quantity: newQuantity })
         });
-  
-        if (!response.ok) throw new Error("Failed to update item");
-        
-        alert(`Item ${id} updated successfully!`);
+
+        if (!response.ok) throw new Error("Update failed");
+
+        alert(`Successfully updated resource: ${id}`);
       } catch (error) {
-        console.error("Error updating item:", error);
+        console.error("Error updating resource:", error);
+        alert(`Failed to update resource: ${id}`);
       } finally {
-        quantityInput.disabled = false;
+        quantityInput.disabled = false; // Re-enable input after update
       }
     }
-  
+
     // Initial fetch
     fetchInventory();
   </script>
