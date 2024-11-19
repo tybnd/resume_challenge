@@ -124,14 +124,16 @@
 <body>
   <div class="container">
     <h2>Tyler B's <br> Cloud Inventory Manager</h2>
-    <p>Manage your DynamoDB inventory items here. You can update item quantities directly, and the changes will be saved to DynamoDB. Refresh the page to see the updated values.</p>
+    <p>This table is to help me keep a easier watch on the resources within my AWS Account. Use the refresh button to see updated resources.</p>
     
     <table id="inventoryTable">
       <thead>
         <tr>
           <th>Item</th>
           <th>Quantity</th>
-          <th>Update</th>
+          <th>Update <button onclick="fetchInventory()">Refresh Resources</button>
+          </th>
+          
         </tr>
       </thead>
       <tbody id="inventoryBody"></tbody>
