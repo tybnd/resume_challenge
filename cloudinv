@@ -170,17 +170,21 @@
     // Fetch all inventory items
     async function fetchInventory() {
       try {
-        const response = await fetch(`${apiUrl}/get-all`);
+          const response = await fetch(`${apiUrl}/get-all`);
+          if (!response.ok) throw new Error("Failed to fetch resources");
 
-        if (!response.ok) throw new Error("Failed to fetch resources");
+          const data = await response.json();
+          console.log("API Response:", data);
 
-        const data = await response.json();
-        populateTable(data); // Populate the table with the fetched items
+          // Ensure 'body' is parsed correctly
+          const items = Array.isArray(data.body) ? data.body : JSON.parse(data.body || "[]");
+          populateTable(items); // Populate table with the fetched data
       } catch (error) {
-        console.error("Error fetching resources:", error);
-        alert("Could not load resources. Please try again later.");
+          console.error("Error fetching resources:", error);
+          alert("Could not load resources. Please try again later.");
       }
-    }
+  }
+
 
     // Add event listener for the refresh button
     document.getElementById("refreshButton").addEventListener("click", fetchInventory);
