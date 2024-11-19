@@ -130,9 +130,9 @@
     <table id="inventoryTable">
       <thead>
         <tr>
-          <th>Item</th>
-          <th>Quantity</th>
-          <th>Update</th>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Status</th>
         </tr>
       </thead>
       <tbody id="inventoryBody"></tbody>
