@@ -92,7 +92,7 @@
 
 @keyframes typing {
     0% { width: 0; }
-    100% { width: 16ch; } /* Adjust for DevOps Engineer */
+    100% { width: 16ch; } /* Adjust this to match the length of DevOps Engineer */
 }
 
 @keyframes deleting {
@@ -109,29 +109,31 @@
     .animated-text {
         display: inline-block;
         position: relative;
+        overflow: hidden;
     }
 
     .animated-text h2 {
         display: inline-block;
-        width: 0;
         margin: 0;
-        opacity: 0; /* Initially hidden */
-        animation: blink 0.75s step-end infinite; /* Blinking cursor */
+        opacity: 0;
+        white-space: nowrap;
+        overflow: hidden;
+        border-right: 3px solid #e8eaeb; /* Blinking cursor */
     }
 
     .animated-text .text {
         animation: typing 2s steps(16) 0s 1 normal forwards, /* Typing 'DevOps Engineer' */
                 deleting 1.5s steps(16) 3s 1 normal forwards, /* Deleting 'DevOps Engineer' */
-                blink 0.75s step-end infinite 4.5s; /* Keep the cursor blinking */
-        opacity: 1;  /* Show 'DevOps Engineer' */
+                blink 0.75s step-end infinite 4.5s; /* Cursor blinking */
+        opacity: 1; /* Show 'DevOps Engineer' */
     }
 
     .animated-text .text2 {
         animation: typing 2s steps(16) 6s 1 normal forwards, /* Typing 'Cloud Engineer' */
-                blink 0.75s step-end infinite 8s; /* Keep the cursor blinking */
+                blink 0.75s step-end infinite 8s; /* Cursor blinking */
         opacity: 0; /* Start hidden */
-        visibility: hidden; /* Ensure it's hidden before typing starts */
-        animation-fill-mode: forwards; /* Ensure it stays visible after typing animation */
+        visibility: hidden; /* Hide 'Cloud Engineer' initially */
+        animation-fill-mode: forwards; /* Stay visible after typing ends */
     }
 
 
@@ -210,6 +212,7 @@
                                 <h2 class="text" style="font-size: 52px; color: #e8eaeb;">DevOps Engineer</h2>
                                 <h2 class="text2" style="font-size: 52px; color: #e8eaeb;">Cloud Engineer</h2>
                             </div>
+                            
                             
                             
 
