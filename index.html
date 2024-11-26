@@ -92,12 +92,18 @@
 
 @keyframes typing {
     0% { width: 0; }
-    100% { width: 16ch; } /* Adjust based on the text length */
+    100% { width: 16ch; } /* Adjust based on the text length of 'DevOps Engineer' */
 }
 
 @keyframes deleting {
     0% { width: 16ch; }
     100% { width: 0; }
+}
+
+@keyframes blink {
+    0% { border-color: transparent; }
+    50% { border-color: #e8eaeb; } /* Blinking cursor color */
+    100% { border-color: transparent; }
 }
 
     .animated-text {
@@ -107,14 +113,19 @@
         white-space: nowrap;
         overflow: hidden;
         border-right: 3px solid #e8eaeb; /* Cursor effect */
-        animation: typing 2s steps(16) 0s 1 normal both,  /* Typing "DevOps Engineer" */
-                deleting 1.5s steps(16) 3s 1 normal both,  /* Deleting "DevOps Engineer" */
-                typing 2s steps(16) 5.5s 1 normal both;  /* Typing "Cloud Engineer" */
+        animation: typing 2s steps(16) 0s 1 normal both,  /* Typing 'DevOps Engineer' */
+                deleting 1.5s steps(16) 3s 1 normal forwards,  /* Deleting 'DevOps Engineer' */
+                typing 2s steps(16) 5.5s 1 normal forwards,  /* Typing 'Cloud Engineer' */
+                blink 0.75s step-end infinite;  /* Keep the cursor blinking */
     }
 
     .animated-text::after {
-        content: "Cloud Engineer";  /* The second text */
+        content: "Cloud Engineer";  /* Second text after deleting */
+        animation: typing 2s steps(16) 9s 1 normal both,  /* Typing 'Cloud Engineer' */
+                deleting 1.5s steps(16) 12s 1 normal forwards;
+        animation-delay: 6s, 9s; /* Delays for the second text swap */
     }
+
 
 
 
