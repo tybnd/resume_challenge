@@ -89,14 +89,12 @@
   }
 }
 
-
-/* Keyframe for typing effect */
+/* Keyframes for typing and deleting */
 @keyframes typing {
     0% { width: 0; }
-    100% { width: 16ch; } /* Adjust this based on the text length */
+    100% { width: 16ch; } /* Adjust based on the length of the text */
 }
 
-/* Keyframe for deleting effect */
 @keyframes deleting {
     0% { width: 16ch; }
     100% { width: 0; }
@@ -105,51 +103,49 @@
 /* Keyframe for blinking cursor effect */
 @keyframes blink {
     0% { border-color: transparent; }
-    50% { border-color: #e8eaeb; } /* Blinking cursor color */
+    50% { border-color: #e8eaeb; }
     100% { border-color: transparent; }
 }
 
-    /* Container for the animated text */
+/* Container for the animated text */
     .animated-text {
         display: flex;
-        justify-content: center; /* Center the container */
-        align-items: center; /* Vertically center the text */
-        height: 100vh; /* Full viewport height */
-        text-align: center; /* Center the text inside the container */
+        justify-content: center;
+        align-items: center;
+        height: 100vh; /* Full screen height */
+        text-align: center;
     }
 
-    /* Styling for text h2 elements */
+    /* Style for h2 elements (text) */
     .animated-text h2 {
         display: inline-block;
+        font-size: 52px;
+        color: #e8eaeb;
         margin: 0;
         white-space: nowrap;
         overflow: hidden;
         border-right: 3px solid #e8eaeb; /* Blinking cursor */
     }
 
-    /* Typing and deleting for "DevOps Engineer" */
+    /* Animation for 'DevOps Engineer' */
     .text1 {
-        width: 0; /* Start with no width */
-        animation: typing 2s steps(16) 0s 1 normal forwards,  /* Typing effect */
-                deleting 1.5s steps(16) 3s 1 normal forwards, /* Deleting effect */
+        animation: typing 2s steps(16) 0s 1 normal forwards, /* Typing */
+                deleting 1.5s steps(16) 3s 1 normal forwards, /* Deleting */
                 blink 0.75s step-end infinite 4.5s; /* Blinking cursor */
-        opacity: 1; /* Make "DevOps Engineer" visible */
     }
 
-    /* Typing for "Cloud Engineer" */
+    /* Animation for 'Cloud Engineer' */
     .text2 {
-        width: 0;
-        opacity: 0; /* Start with no visibility */
-        animation: typing 2s steps(16) 6s 1 normal forwards, /* Typing effect for "Cloud Engineer" */
-                blink 0.75s step-end infinite 8s; /* Keep the blinking cursor */
-        animation-fill-mode: forwards; /* Retain final state (visible) */
+        opacity: 0; /* Start as invisible */
+        animation: typing 2s steps(16) 6s 1 normal forwards, /* Typing */
+                blink 0.75s step-end infinite 8s; /* Blinking cursor */
+        animation-fill-mode: forwards; /* Keep it visible after animation */
     }
 
-    /* Ensure the text remains centered */
+    /* Center text inside container */
     .animated-text h2 {
         position: relative;
     }
-
 
 
 
