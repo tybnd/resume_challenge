@@ -90,34 +90,34 @@
 }
 
 
-    @keyframes typing {
+@keyframes typing {
     0% { width: 0; }
     100% { width: 16ch; } /* Adjust this based on the length of the text */
-    }
+}
 
-    @keyframes deleting {
+@keyframes deleting {
     0% { width: 16ch; }
     100% { width: 0; }
     }
 
     .animated-text {
-    display: inline-block;
-    font-size: 52px;
-    color: #e8eaeb;
-    white-space: nowrap;
-    overflow: hidden;
-    border-right: 3px solid #e8eaeb; /* Cursor effect */
-    animation: typing 2s steps(16) 1s 1 normal both, 
+        display: inline-block;
+        font-size: 52px;
+        color: #e8eaeb;
+        white-space: nowrap;
+        overflow: hidden;
+        border-right: 3px solid #e8eaeb; /* Cursor effect */
+        animation: typing 2s steps(16) 1s 1 normal both, 
                 deleting 1.5s steps(16) 4s 1 normal both,
                 typing 2s steps(16) 6.5s 1 normal both;
     }
 
     /* Change the content to "Cloud Engineer" after the deletion */
     .animated-text::after {
-    content: "Cloud Engineer";
-    animation: typing 2s steps(16) 9s 1 normal both, 
+        content: "Cloud Engineer"; /* Default text after animation */
+        animation: typing 2s steps(16) 9s 1 normal both, 
                 deleting 1.5s steps(16) 12s 1 normal both;
-    animation-delay: 9s, 12s;
+        animation-delay: 9s, 12s; /* Timing for the second text change */
     }
 
 
