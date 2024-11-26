@@ -92,17 +92,11 @@
 
     @keyframes typing {
     0% { width: 0; }
-    25% { width: 20%; }
-    50% { width: 60%; }
-    75% { width: 90%; }
-    100% { width: 100%; }
+    100% { width: 16ch; } /* Adjust this based on the length of the text */
     }
 
     @keyframes deleting {
-    0% { width: 100%; }
-    25% { width: 90%; }
-    50% { width: 60%; }
-    75% { width: 20%; }
+    0% { width: 16ch; }
     100% { width: 0; }
     }
 
@@ -113,14 +107,17 @@
     white-space: nowrap;
     overflow: hidden;
     border-right: 3px solid #e8eaeb; /* Cursor effect */
-    animation: typing 3s steps(30) 1s 1 normal both, deleting 3s steps(30) 4s 1 normal both, typing 3s steps(30) 7s 1 normal both;
-    animation-delay: 1s, 4s, 7s; /* Delay between animations */
+    animation: typing 2s steps(16) 1s 1 normal both, 
+                deleting 1.5s steps(16) 4s 1 normal both,
+                typing 2s steps(16) 6.5s 1 normal both;
     }
 
+    /* Change the content to "Cloud Engineer" after the deletion */
     .animated-text::after {
-    content: "Cloud Engineer"; /* Change this to the next role */
-    animation: typing 3s steps(30) 10s 1 normal both, deleting 3s steps(30) 13s 1 normal both;
-    animation-delay: 10s, 13s; /* Timing for the next role */
+    content: "Cloud Engineer";
+    animation: typing 2s steps(16) 9s 1 normal both, 
+                deleting 1.5s steps(16) 12s 1 normal both;
+    animation-delay: 9s, 12s;
     }
 
 
@@ -191,6 +188,7 @@
                             
                             <!-- Larger font size for Title -->
                             <h2 class="animated-text" style="font-size: 52px; color: #e8eaeb;">DevOps Engineer</h2>
+
 
                             
                             <!-- Larger font size for Visitor Count -->
