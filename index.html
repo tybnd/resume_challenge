@@ -109,11 +109,13 @@
     100% { border-color: transparent; }
 }
 
-    /* Styling for the container */
+    /* Container for the animated text */
     .animated-text {
-        display: inline-block;
-        position: relative;
-        overflow: hidden;
+        display: flex;
+        justify-content: center; /* Center the container */
+        align-items: center; /* Vertically center the text */
+        height: 100vh; /* Full viewport height */
+        text-align: center; /* Center the text inside the container */
     }
 
     /* Styling for text h2 elements */
@@ -136,12 +138,16 @@
 
     /* Typing for "Cloud Engineer" */
     .text2 {
-        visibility: hidden; /* Start hidden */
         width: 0;
+        opacity: 0; /* Start with no visibility */
         animation: typing 2s steps(16) 6s 1 normal forwards, /* Typing effect for "Cloud Engineer" */
                 blink 0.75s step-end infinite 8s; /* Keep the blinking cursor */
-        opacity: 0; /* Start with no visibility */
         animation-fill-mode: forwards; /* Retain final state (visible) */
+    }
+
+    /* Ensure the text remains centered */
+    .animated-text h2 {
+        position: relative;
     }
 
 
