@@ -98,7 +98,7 @@
 @keyframes deleting {
     0% { width: 16ch; }
     100% { width: 0; }
-}
+    }
 
     .animated-text {
         display: inline-block;
@@ -107,18 +107,16 @@
         white-space: nowrap;
         overflow: hidden;
         border-right: 3px solid #e8eaeb; /* Cursor effect */
-        animation: typing 1.5s steps(16) 1s 1 normal both, /* Faster typing effect */
-                deleting 1s steps(16) 3.5s 1 normal both, /* Faster deleting */
-                typing 1.5s steps(16) 5s 1 normal both; /* Faster typing of second text */
+        animation: typing 2s steps(16) 0s 1 normal both, /* Typing DevOps Engineer */
+                deleting 1.5s steps(16) 3s 1 normal both, /* Deleting DevOps Engineer */
+                typing 2s steps(16) 4.5s 1 normal both; /* Typing Cloud Engineer */
     }
 
-    /* Change the content to "Cloud Engineer" after the deletion */
+    /* This will control the timing of the second text ("Cloud Engineer") */
     .animated-text::after {
-        content: "Cloud Engineer"; /* Default text after animation */
-        animation: typing 1.5s steps(16) 7s 1 normal both, /* Faster typing of new text */
-                deleting 1s steps(16) 9.5s 1 normal both; /* Faster deleting of second text */
-        animation-delay: 7s, 9.5s; /* Timing for the second text change */
+        content: "Cloud Engineer";
     }
+
 
 
         </style>
