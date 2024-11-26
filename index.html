@@ -116,21 +116,27 @@
         position: relative;
     }
 
-    .animated-text .text {
+    .animated-text h2 {
         display: inline-block;
         width: 0;
+        margin: 0;
         animation: typing 2s steps(16) 0s 1 normal forwards,  /* Typing 'DevOps Engineer' */
                 deleting 1.5s steps(16) 3s 1 normal forwards,  /* Deleting 'DevOps Engineer' */
                 blink 0.75s step-end infinite;  /* Keep the cursor blinking */
     }
 
-    .animated-text .text2 {
-        display: inline-block;
+    .animated-text h2:nth-of-type(2) {
         width: 0;
         animation: typing 2s steps(16) 5.5s 1 normal forwards,  /* Typing 'Cloud Engineer' */
                 blink 0.75s step-end infinite 7s;  /* Keep the cursor blinking */
-        visibility: hidden;
+        opacity: 0;  /* Make the second text invisible initially */
+        animation-fill-mode: forwards;  /* Ensure it stays visible after typing animation */
     }
+
+    .animated-text h2:nth-of-type(2) {
+        opacity: 1; /* Make the second text visible when the animation starts */
+    }
+
 
 
 
