@@ -108,11 +108,6 @@
 
     .animated-text {
         display: inline-block;
-        font-size: 52px;
-        color: #e8eaeb;
-        white-space: nowrap;
-        overflow: hidden;
-        border-right: 3px solid #e8eaeb; /* Cursor effect */
         position: relative;
     }
 
@@ -120,24 +115,24 @@
         display: inline-block;
         width: 0;
         margin: 0;
-        animation: typing 2s steps(16) 0s 1 normal forwards,  /* Typing 'DevOps Engineer' */
-                deleting 1.5s steps(16) 3s 1 normal forwards,  /* Deleting 'DevOps Engineer' */
-                blink 0.75s step-end infinite;  /* Keep the cursor blinking */
+        opacity: 0;  /* Initially hidden */
+        animation: blink 0.75s step-end infinite;  /* Blinking cursor */
     }
 
-    .animated-text h2:nth-of-type(2) {
-        width: 0;
-        animation: typing 2s steps(16) 5.5s 1 normal forwards,  /* Typing 'Cloud Engineer' */
-                blink 0.75s step-end infinite 7s;  /* Keep the cursor blinking */
-        opacity: 0;  /* Make the second text invisible initially */
-        animation-fill-mode: forwards;  /* Ensure it stays visible after typing animation */
+    .animated-text .text {
+        animation: typing 2s steps(16) 0s 1 normal forwards, /* Typing 'DevOps Engineer' */
+                deleting 1.5s steps(16) 3s 1 normal forwards, /* Deleting 'DevOps Engineer' */
+                blink 0.75s step-end infinite 4.5s; /* Keep the cursor blinking */
+        opacity: 1;  /* Show 'DevOps Engineer' */
     }
 
-    .animated-text h2:nth-of-type(2) {
-        opacity: 1; /* Make the second text visible when the animation starts */
+    .animated-text .text2 {
+        animation: typing 2s steps(16) 6s 1 normal forwards, /* Typing 'Cloud Engineer' */
+                blink 0.75s step-end infinite 8s; /* Keep the cursor blinking */
+        opacity: 0; /* Start hidden */
+        visibility: hidden; /* Ensure it's hidden before typing starts */
+        animation-fill-mode: forwards; /* Ensure it stays visible after typing animation */
     }
-
-
 
 
 
@@ -210,12 +205,10 @@
                             <!-- Larger font size for Name -->
                             <h1 class="promo-block-title" style="color: #e8eaeb; font-size: 96px; font-weight: bold;">Hi, I'm Tyler</h1> 
                             
-                            <!-- Larger font size for Title -->
                             <div class="animated-text">
-                                <h2>DevOps Engineer</h2>
-                                <h2>Cloud Engineer</h2>
+                                <h2 class="text" style="font-size: 52px; color: #e8eaeb;">DevOps Engineer</h2>
+                                <h2 class="text2" style="font-size: 52px; color: #e8eaeb;">Cloud Engineer</h2>
                             </div>
-                            
                             
 
                             
