@@ -422,14 +422,14 @@
                 
             </div>
             <script>
-                const words = ["DevOps Engineer", " Cloud Engineer"]; // No <br> tags here
+                const words = ["DevOps Engineer", "Cloud Engineer"]; // Words to type
                 let wordIndex = 0; // Tracks the current word
                 let charIndex = 0; // Tracks the current character within the word
                 let currentWord = words[wordIndex].split(""); // Current word as an array
                 let isDeleting = false; // Flag to determine typing or deleting
                 const typeElement = document.getElementById("type"); // Target element
                 const typingSpeed = 70; // Speed of typing and deleting
-                const spacePlaceholder = "|"; // Space to remain visible when words are deleted
+                const spacePlaceholder = " "; // Space to remain visible when words are deleted
             
                 function textLoop() {
                   if (!isDeleting) {
@@ -460,7 +460,10 @@
                   setTimeout(textLoop, typingSpeed); // Adjust speed between typing/deleting
                 }
             
-                textLoop(); // Start the loop
+                document.addEventListener("DOMContentLoaded", () => {
+                  typeElement.style.visibility = "visible"; // Reveal the element only when ready
+                  textLoop(); // Start the loop
+                });
               </script>
         </footer>
         <!-- End Footer -->
