@@ -154,7 +154,7 @@
                             <!-- Larger font size for Name -->
                             <h1 class="promo-block-title" style="color: #e8eaeb; font-size: 96px; font-weight: bold;">Hi, I'm Tyler</h1> 
                             
-                            <h2 class="text1" style="font-size: 52px; color: #e8eaeb;">DevOps Engineer</h2>
+                            <h2 class="text1" style="font-size: 52px; color: #e8eaeb;"></h2>
    
                          
                             <p id="replaceme" style="font-size: 48px; color: #e8eaeb;">Welcome to My Site!</p>
@@ -395,7 +395,7 @@
                 
             </div>
             <script>
-                let words = [" DevOps Engineer ", " Cloud Engineer "]; // Words with spaces around them
+                let words = [" DevOps Engineer ", " Cloud Engineer "]; // Words with spaces for consistent layout
                 let currentWordIndex = 0;
                 let currentCharIndex = 0;
                 let textElement = document.querySelector(".text1");
@@ -437,7 +437,7 @@
             
                 document.addEventListener("DOMContentLoaded", () => {
                     // Ensure the text is hidden initially, then start animation
-                    textElement.style.visibility = "visible"; // Reveal the element
+                    textElement.style.visibility = "visible"; // Reveal the element only when ready
                     typeEffect(); // Start the typing and deleting effect
                 });
               </script>
