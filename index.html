@@ -422,10 +422,10 @@
                 
             </div>
             <script>
-                const words = ["DevOps <br> Engineer", "Cloud <br> Engineer"]; // Words with line breaks
+                const words = ["DevOps Engineer ", "Cloud Engineer "]; // No <br> tags here
                 let wordIndex = 0; // Tracks the current word
                 let charIndex = 0; // Tracks the current character within the word
-                let currentWord = words[wordIndex].split(/(<br>)/); // Split the word at <br> without removing it
+                let currentWord = words[wordIndex].split(""); // Current word as an array
                 let isDeleting = false; // Flag to determine typing or deleting
                 const typeElement = document.getElementById("type"); // Target element
                 const typingSpeed = 70; // Speed of typing and deleting
@@ -452,7 +452,7 @@
                       // Once the word is fully deleted, switch to the next word
                       isDeleting = false;
                       wordIndex = (wordIndex + 1) % words.length; // Cycle through words
-                      currentWord = words[wordIndex].split(/(<br>)/); // Reset current word with line breaks
+                      currentWord = words[wordIndex].split(""); // Reset current word
                       charIndex = 0; // Reset character index
                     }
                   }
