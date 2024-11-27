@@ -394,33 +394,50 @@
             <div class="container">
                 
             </div>
-
             <script>
                 let words = ["DevOps Engineer", "Cloud Engineer"];
                 let currentWordIndex = 0;
                 let currentCharIndex = 0;
                 let textElement = document.querySelector(".text1");
-            
+                let isDeleting = false;
+
                 function typeEffect() {
-                  textElement.textContent = words[currentWordIndex].slice(0, currentCharIndex);
-            
-                  currentCharIndex++;
-                  
-                  if (currentCharIndex > words[currentWordIndex].length) {
-                    setTimeout(() => {
-                      currentWordIndex = (currentWordIndex + 1) % words.length;
-                      currentCharIndex = 0;
-                      setTimeout(typeEffect, 500);
-                    }, 1000);
-                  } else {
+                if (!isDeleting) {
+                    // Typing effect: add one letter at a time
+                    textElement.textContent = words[currentWordIndex].slice(0, currentCharIndex);
+                    currentCharIndex++;
+                    
+                    if (currentCharIndex === words[currentWordIndex].length) {
+                    // Pause before starting to delete
+                    isDeleting = true;
+                    setTimeout(typeEffect, 1000); // Wait before deleting
+                    } else {
+                    // Continue typing
                     setTimeout(typeEffect, 150);
-                  }
+                    }
+                } else {
+                    // Deleting effect: remove one letter at a time
+                    textElement.textContent = words[currentWordIndex].slice(0, currentCharIndex);
+                    currentCharIndex--;
+                    
+                    if (currentCharIndex === 0) {
+                    // Once deleted, switch to the next word
+                    isDeleting = false;
+                    currentWordIndex = (currentWordIndex + 1) % words.length;
+                    setTimeout(typeEffect, 500); // Wait before typing the next word
+                    } else {
+                    // Continue deleting
+                    setTimeout(typeEffect, 100);
+                    }
                 }
-            
+                }
+
                 document.addEventListener("DOMContentLoaded", () => {
-                  typeEffect(); // Start typing effect when the page is loaded
+                typeEffect(); // Start the typing and deleting effect
                 });
-              </script>
+
+            </script>
+            
         </footer>
         <!-- End Footer -->
 
