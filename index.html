@@ -91,14 +91,9 @@
     #type {
         font-family: Arial, sans-serif;
         color: #e8eaeb;
+        white-space: pre-wrap; /* Allows wrapping including line breaks */
         display: inline-block;
-        min-width: 0; /* Don't enforce min-width */
-        white-space: nowrap; /* Prevent wrapping text by default */
-        border-right: 4px solid #e8eaeb; /* Cursor effect */
-        text-align: center; /* Ensure text is centered */
-        font-size: 52px;
-        visibility: hidden; /* Initially hidden */
-        max-width: 90%; /* Prevent overflow */
+        min-width: 200px; /* Ensure minimum width */
         }
 
     /* Responsive font size for mobile devices */
@@ -116,7 +111,10 @@
       }
     }
 
-   
+    /* Default font size */
+    #type {
+      font-size: 52px;
+    }
 
         </style>
     </head>
@@ -424,7 +422,7 @@
                 
             </div>
             <script>
-                const words = ["DevOps Engineer", "Cloud Engineer"]; // Words without trailing spaces
+                const words = ["DevOps Engineer", "Cloud Engineer"]; // Words to type
                 let wordIndex = 0; // Tracks the current word
                 let charIndex = 0; // Tracks the current character within the word
                 let currentWord = words[wordIndex].split(""); // Current word as an array
@@ -436,31 +434,26 @@
                 function textLoop() {
                   if (!isDeleting) {
                     // Typing Phase
-                    if (charIndex < currentWord.length) {
-                      typeElement.innerHTML = currentWord.slice(0, charIndex + 1).join("") + spacePlaceholder;
-                      charIndex++;
-                    } else {
-                      // Word is fully typed, move to deleting phase after a brief pause
-                      setTimeout(() => {
-                        isDeleting = true;
-                        textLoop(); // Start deleting immediately after pause
-                      }, 1000); // Brief delay before starting to delete
+                    typeElement.innerHTML = currentWord.slice(0, charIndex).join("") + spacePlaceholder;
+                    charIndex++;
+            
+                    if (charIndex === currentWord.length) {
+                      // Once the word is fully typed, switch to deleting after a delay
+                      isDeleting = true;
+                      setTimeout(textLoop, 1000); // Pause after typing the word
                       return;
                     }
                   } else {
                     // Deleting Phase
-                    if (charIndex > 0) {
-                      typeElement.innerHTML = currentWord.slice(0, charIndex - 1).join("") + spacePlaceholder;
-                      charIndex--;
-                    } else {
-                      // Once the word is deleted, move to the next word
+                    typeElement.innerHTML = currentWord.slice(0, charIndex).join("") + spacePlaceholder;
+                    charIndex--;
+            
+                    if (charIndex < 0) {
+                      // Once the word is fully deleted, switch to the next word
+                      isDeleting = false;
                       wordIndex = (wordIndex + 1) % words.length; // Cycle through words
-                      currentWord = words[wordIndex].split(""); // Set the new word
-                      setTimeout(() => {
-                        isDeleting = false;
-                        textLoop(); // Start typing the next word
-                      }, 500); // Pause before typing next word
-                      return;
+                      currentWord = words[wordIndex].split(""); // Reset current word
+                      charIndex = 0; // Reset character index
                     }
                   }
             
