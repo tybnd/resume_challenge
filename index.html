@@ -106,14 +106,14 @@
     @media (max-width: 600px) {
       #type {
         font-size: 32px; /* Smaller font size for mobile */
-        min-width: 120px; /* Reduce the minimum width for smaller screens */
+        max-width: 80%; /* Adjust max-width to allow for wrapping */
       }
     }
 
     @media (max-width: 400px) {
       #type {
         font-size: 24px; /* Further reduce font size for very small screens */
-        min-width: 100px; /* Adjust minimum width even more */
+        max-width: 90%; /* Keep a more flexible width on very small screens */
       }
     }
 
