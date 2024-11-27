@@ -395,53 +395,55 @@
                 
             </div>
             <script>
-                let words = [" DevOps Engineer ", " Cloud Engineer "]; // Words with spaces for consistent layout
-                let currentWordIndex = 0;
-                let currentCharIndex = 0;
-                let textElement = document.querySelector(".text1");
-                let isDeleting = false;
-            
-                function typeEffect() {
-                    // Placeholder to maintain space
-                    const placeholder = "_";
-            
-                    if (!isDeleting) {
-                        // Typing effect: add one letter at a time
-                        textElement.textContent = words[currentWordIndex].slice(0, currentCharIndex) + placeholder;
-                        currentCharIndex++;
-            
-                        if (currentCharIndex === words[currentWordIndex].length) {
-                            // Full word typed, pause briefly before starting to delete
-                            textElement.textContent = words[currentWordIndex] + placeholder; // Ensure last letter is shown immediately
+            let words = [" DevOps Engineer ", " Cloud Engineer "]; // Words with spaces for consistent layout
+            let currentWordIndex = 0;
+            let currentCharIndex = 0;
+            let textElement = document.querySelector(".text1");
+            let isDeleting = false;
+
+            function typeEffect() {
+                // Placeholder to maintain space
+                const placeholder = "|";
+
+                if (!isDeleting) {
+                    // Typing effect: add one letter at a time
+                    textElement.textContent = words[currentWordIndex].slice(0, currentCharIndex) + placeholder;
+                    currentCharIndex++;
+
+                    if (currentCharIndex === words[currentWordIndex].length) {
+                        // Full word typed, pause briefly before starting to delete
+                        setTimeout(() => {
                             isDeleting = true;
-                            setTimeout(typeEffect, 1000); // Hold the full word for 1000ms
-                        } else {
-                            setTimeout(typeEffect, 100); // Continue typing at 100ms per character
-                        }
+                            typeEffect();
+                        }, 1000); // Hold the full word for 1000ms
                     } else {
-                        // Deleting effect: remove one letter at a time
-                        textElement.textContent = words[currentWordIndex].slice(0, currentCharIndex) + placeholder;
-                        currentCharIndex--;
-            
-                        if (currentCharIndex < 0) {
-                            // Once completely deleted, switch to the next word
-                            isDeleting = false;
-                            currentWordIndex = (currentWordIndex + 1) % words.length;
-                            textElement.textContent = placeholder; // Keep placeholder visible
-                            setTimeout(typeEffect, 500); // Pause briefly before typing the next word
-                        } else {
-                            setTimeout(typeEffect, 50); // Delete faster at 50ms per character
-                        }
+                        setTimeout(typeEffect, 100); // Continue typing at 100ms per character
+                    }
+                } else {
+                    // Deleting effect: remove one letter at a time
+                    textElement.textContent = words[currentWordIndex].slice(0, currentCharIndex) + placeholder;
+                    currentCharIndex--;
+
+                    if (currentCharIndex < 0) {
+                        // Once completely deleted, switch to the next word
+                        isDeleting = false;
+                        currentWordIndex = (currentWordIndex + 1) % words.length;
+                        textElement.textContent = placeholder; // Keep placeholder visible
+                        setTimeout(typeEffect, 500); // Pause briefly before typing the next word
+                    } else {
+                        setTimeout(typeEffect, 50); // Delete faster at 50ms per character
                     }
                 }
-            
-                document.addEventListener("DOMContentLoaded", () => {
-                    // Ensure the text is hidden initially, then start animation
-                    textElement.style.visibility = "visible"; // Reveal the element only when ready
-                    typeEffect(); // Start the typing and deleting effect
-                });
-              </script>
-            
+            }
+
+            document.addEventListener("DOMContentLoaded", () => {
+                // Start with just the placeholder and hide the element until animation begins
+                textElement.textContent = "|"; // Initialize with only the placeholder
+                textElement.style.visibility = "visible"; // Reveal the element only when ready
+                typeEffect(); // Start the typing and deleting effect
+            });
+
+        </script>
         </footer>
         <!-- End Footer -->
 
