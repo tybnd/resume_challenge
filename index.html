@@ -435,13 +435,13 @@
                 let isDeleting = false; // Flag to determine typing or deleting
                 const typeElement = document.getElementById("type"); // Target element
                 const typingSpeed = 70; // Speed of typing and deleting
-                const cursor = "<span class='cursor'></span>"; 
+                const cursor = "<span class='cursor'></span>"; // Cursor as a span element
             
                 function textLoop() {
                   if (!isDeleting) {
                     // Typing Phase
                     if (charIndex < currentWord.length) {
-                      typeElement.innerHTML = currentWord.slice(0, charIndex + 1).join("") + spacePlaceholder;
+                      typeElement.innerHTML = currentWord.slice(0, charIndex + 1).join("") + cursor;
                       charIndex++;
                     } else {
                       // Word is fully typed, move to deleting phase after a brief pause
@@ -454,7 +454,7 @@
                   } else {
                     // Deleting Phase
                     if (charIndex > 0) {
-                      typeElement.innerHTML = currentWord.slice(0, charIndex - 1).join("") + spacePlaceholder;
+                      typeElement.innerHTML = currentWord.slice(0, charIndex - 1).join("") + cursor;
                       charIndex--;
                     } else {
                       // Once the word is deleted, move to the next word
