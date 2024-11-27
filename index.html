@@ -88,13 +88,14 @@
     font-size: 14px;
   }
 }   
-
     #type {
         font-family: Arial, sans-serif;
         font-size: 52px;
         color: #e8eaeb;
         white-space: nowrap;
         border-right: 4px solid #e8eaeb; /* Cursor effect */
+        display: inline-block;
+        min-width: 300px; /* Ensures consistent space for the text */
         }
 
         </style>
@@ -410,11 +411,12 @@
                 let isDeleting = false; // Flag to determine typing or deleting
                 const typeElement = document.getElementById("type"); // Target element
                 const typingSpeed = 70; // Speed of typing and deleting
+                const spacePlaceholder = " "; // Space to remain visible when words are deleted
             
                 function textLoop() {
                   if (!isDeleting) {
                     // Typing Phase
-                    typeElement.innerHTML += currentWord[charIndex];
+                    typeElement.innerHTML = currentWord.slice(0, charIndex).join("") + spacePlaceholder;
                     charIndex++;
             
                     if (charIndex === currentWord.length) {
@@ -425,10 +427,10 @@
                     }
                   } else {
                     // Deleting Phase
-                    currentWord.pop(); // Remove the last character
-                    typeElement.innerHTML = currentWord.join("");
+                    typeElement.innerHTML = currentWord.slice(0, charIndex).join("") + spacePlaceholder;
+                    charIndex--;
             
-                    if (currentWord.length === 0) {
+                    if (charIndex < 0) {
                       // Once the word is fully deleted, switch to the next word
                       isDeleting = false;
                       wordIndex = (wordIndex + 1) % words.length; // Cycle through words
