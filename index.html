@@ -395,11 +395,17 @@
                 
             </div>
             <script>
-                let words = [" DevOps Engineer ", " Cloud Engineer "];
+                let words = [" DevOps Engineer ", " Cloud Engineer "]; // Words with spaces in front and behind
                 let currentWordIndex = 0;
                 let currentCharIndex = 0;
                 let textElement = document.querySelector(".text1");
                 let isDeleting = false;
+
+                // Clear the text content on page load to prevent flash
+                document.addEventListener("DOMContentLoaded", () => {
+                    textElement.textContent = ""; // Ensure no content is visible initially
+                    typeEffect(); // Start the typing and deleting effect
+                });
 
                 function typeEffect() {
                     // Placeholder to maintain space
@@ -435,9 +441,6 @@
                     }
                 }
 
-                document.addEventListener("DOMContentLoaded", () => {
-                    typeEffect(); // Start the typing and deleting effect
-                });
 
 
               </script>
