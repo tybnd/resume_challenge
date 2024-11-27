@@ -89,34 +89,35 @@
   }
 }
 
-/* Keyframes for typing and deleting */
+/* Keyframes for typing animation */
 @keyframes typing {
     0% { width: 0; }
-    100% { width: 16ch; } /* Adjust based on the length of the text */
+    100% { width: 16ch; } /* Adjust this based on the length of the text */
 }
 
+/* Keyframes for deleting animation */
 @keyframes deleting {
     0% { width: 16ch; }
     100% { width: 0; }
 }
 
-/* Keyframe for blinking cursor effect */
+/* Keyframes for the blinking cursor effect */
 @keyframes blink {
     0% { border-color: transparent; }
     50% { border-color: #e8eaeb; }
     100% { border-color: transparent; }
 }
 
-/* Container for the animated text */
+    /* Container for the animated text */
     .animated-text {
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 100vh; /* Full screen height */
+        height: 100vh; /* Full viewport height */
         text-align: center;
     }
 
-    /* Style for h2 elements (text) */
+    /* Base styling for both h2 elements (text) */
     .animated-text h2 {
         display: inline-block;
         font-size: 52px;
@@ -127,24 +128,21 @@
         border-right: 3px solid #e8eaeb; /* Blinking cursor */
     }
 
-    /* Animation for 'DevOps Engineer' */
+    /* Animation for the first text (DevOps Engineer) */
     .text1 {
-        animation: typing 2s steps(16) 0s 1 normal forwards, /* Typing */
-                deleting 1.5s steps(16) 3s 1 normal forwards, /* Deleting */
+        width: 0; /* Start with no width */
+        animation: typing 2s steps(16) 0s 1 normal forwards,  /* Typing effect */
+                deleting 1.5s steps(16) 3s 1 normal forwards, /* Deleting effect */
                 blink 0.75s step-end infinite 4.5s; /* Blinking cursor */
     }
 
-    /* Animation for 'Cloud Engineer' */
+    /* Animation for the second text (Cloud Engineer) */
     .text2 {
-        opacity: 0; /* Start as invisible */
-        animation: typing 2s steps(16) 6s 1 normal forwards, /* Typing */
+        width: 0; /* Start with no width */
+        opacity: 0; /* Initially hidden */
+        animation: typing 2s steps(16) 6s 1 normal forwards,  /* Typing effect */
                 blink 0.75s step-end infinite 8s; /* Blinking cursor */
-        animation-fill-mode: forwards; /* Keep it visible after animation */
-    }
-
-    /* Center text inside container */
-    .animated-text h2 {
-        position: relative;
+        animation-fill-mode: forwards; /* Ensures text stays visible after typing */
     }
 
 
