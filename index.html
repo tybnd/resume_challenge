@@ -87,70 +87,7 @@
   .nav-item-child {
     font-size: 14px;
   }
-}
-
-/* Keyframes for typing animation */
-@keyframes typing {
-    0% { width: 0; opacity: 1; }
-    100% { width: 100%; opacity: 1; }
-}
-
-/* Keyframes for deleting animation */
-@keyframes deleting {
-    0% { width: 100%; opacity: 1; }
-    100% { width: 0; opacity: 0; }
-}
-
-/* Keyframes for blinking cursor effect */
-@keyframes blink {
-    0% { border-color: transparent; }
-    50% { border-color: #e8eaeb; }
-    100% { border-color: transparent; }
-}
-
-/* Container for the animated text */
-    .animated-text {
-        position: relative;
-        display: inline-block;
-        text-align: center;
-        width: 100%;
-        height: 100vh; /* Full viewport height */
-        top: 50%;
-        transform: translateY(-50%); /* Center vertically */
-    }
-
-    /* Base styling for both h2 elements (text) */
-    .animated-text h2 {
-        display: inline-block;
-        white-space: nowrap;
-        overflow: hidden;
-        opacity: 0; /* Initially hidden */
-        width: 0; /* Start with width 0 for typing effect */
-        margin: 0;
-        border-right: 3px solid #e8eaeb; /* Blinking cursor */
-    }
-
-    /* Animation for the first text (DevOps Engineer) */
-    .text1 {
-        animation: typing 2s steps(16) 0s 1 normal forwards,  /* Typing effect */
-                deleting 1.5s steps(16) 4s 1 normal forwards, /* Deleting effect */
-                blink 0.75s step-end infinite 4.5s; /* Blinking cursor */
-    }
-
-    /* Animation for the second text (Cloud Engineer) */
-    .text2 {
-        animation: typing 2s steps(16) 6s 1 normal forwards,  /* Typing effect */
-                deleting 1.5s steps(16) 9.5s 1 normal forwards, /* Deleting effect */
-                blink 0.75s step-end infinite 9s; /* Blinking cursor */
-        animation-fill-mode: forwards; /* Ensures text stays visible after typing */
-    }
-
-
-
-
-
-
-
+}   
 
         </style>
     </head>
@@ -218,7 +155,7 @@
                             <h1 class="promo-block-title" style="color: #e8eaeb; font-size: 96px; font-weight: bold;">Hi, I'm Tyler</h1> 
                             
                             <h2 class="text1" style="font-size: 52px; color: #e8eaeb;">DevOps Engineer</h2>
-                            <h2 class="text2" style="font-size: 52px; color: #e8eaeb;">Cloud Engineer</h2>
+   
                          
                             <p id="replaceme" style="font-size: 48px; color: #e8eaeb;">Welcome to My Site!</p>
                         </div>
@@ -457,6 +394,33 @@
             <div class="container">
                 
             </div>
+
+            <script>
+                let words = ["DevOps Engineer", "Cloud Engineer"];
+                let currentWordIndex = 0;
+                let currentCharIndex = 0;
+                let textElement = document.querySelector(".text1");
+            
+                function typeEffect() {
+                  textElement.textContent = words[currentWordIndex].slice(0, currentCharIndex);
+            
+                  currentCharIndex++;
+                  
+                  if (currentCharIndex > words[currentWordIndex].length) {
+                    setTimeout(() => {
+                      currentWordIndex = (currentWordIndex + 1) % words.length;
+                      currentCharIndex = 0;
+                      setTimeout(typeEffect, 500);
+                    }, 1000);
+                  } else {
+                    setTimeout(typeEffect, 150);
+                  }
+                }
+            
+                document.addEventListener("DOMContentLoaded", () => {
+                  typeEffect(); // Start typing effect when the page is loaded
+                });
+              </script>
         </footer>
         <!-- End Footer -->
 
