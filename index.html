@@ -91,14 +91,14 @@
 
 /* Keyframes for typing animation */
 @keyframes typing {
-    0% { width: 0; }
-    100% { width: 100%; }
+    0% { width: 0; opacity: 1; }
+    100% { width: 100%; opacity: 1; }
 }
 
 /* Keyframes for deleting animation */
 @keyframes deleting {
-    0% { width: 100%; }
-    100% { width: 0; }
+    0% { width: 100%; opacity: 1; }
+    100% { width: 0; opacity: 0; }
 }
 
 /* Keyframes for blinking cursor effect */
@@ -113,7 +113,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 100vh; /* Full viewport height */
         text-align: center;
     }
 
@@ -123,29 +122,24 @@
         white-space: nowrap;
         overflow: hidden;
         border-right: 3px solid #e8eaeb; /* Blinking cursor */
-        margin: 0; /* Remove extra space around text */
     }
 
     /* Animation for the first text (DevOps Engineer) */
     .text1 {
+        display: inline-block;
         opacity: 1;
         animation: typing 2s steps(16) 0s 1 normal forwards,  /* Typing effect */
-                deleting 1.5s steps(16) 4s 1 normal forwards, /* Deleting effect */
+                deleting 1.5s steps(16) 3s 1 normal forwards, /* Deleting effect */
                 blink 0.75s step-end infinite 4.5s; /* Blinking cursor */
     }
 
     /* Animation for the second text (Cloud Engineer) */
     .text2 {
+        display: inline-block;
         opacity: 0; /* Initially hidden */
         animation: typing 2s steps(16) 6s 1 normal forwards,  /* Typing effect */
-                deleting 1.5s steps(16) 9.5s 1 normal forwards, /* Deleting effect */
-                blink 0.75s step-end infinite 9s; /* Blinking cursor */
+                blink 0.75s step-end infinite 8s; /* Blinking cursor */
         animation-fill-mode: forwards; /* Ensures text stays visible after typing */
-    }
-
-    /* Animation for alternating between DevOps and Cloud text */
-    .animated-text h2 {
-        animation: blink 0.75s step-end infinite;
     }
 
 
@@ -220,16 +214,12 @@
                         <div class="margin-b-30">
                             <!-- Larger font size for Name -->
                             <h1 class="promo-block-title" style="color: #e8eaeb; font-size: 96px; font-weight: bold;">Hi, I'm Tyler</h1> 
-                            <div class="animated-text">
-                                <h2 class="text1" style="font-size: 52px; color: #e8eaeb;">DevOps Engineer</h2>
-                                <h2 class="text2" style="font-size: 52px; color: #e8eaeb;">Cloud Engineer</h2>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
+                                <div class="animated-text">
+                                    <h2 class="text1" style="font-size: 52px; color: #e8eaeb;">DevOps Engineer</h2>
+                                    <h2 class="text2" style="font-size: 52px; color: #e8eaeb;">Cloud Engineer</h2>
+                                </div>
+                            
+                                
                             
                             
                             
