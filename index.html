@@ -403,14 +403,14 @@
                 
             </div>
             <script>
-                const words = ["DevOps \n Engineer ", "Cloud \n Engineer "];
+                const words = ["DevOps <br> Engineer", "Cloud <br> Engineer"]; // Use <br> for line breaks
                 let wordIndex = 0; // Tracks the current word
                 let charIndex = 0; // Tracks the current character within the word
                 let currentWord = words[wordIndex].split(""); // Current word as an array
                 let isDeleting = false; // Flag to determine typing or deleting
                 const typeElement = document.getElementById("type"); // Target element
                 const typingSpeed = 70; // Speed of typing and deleting
-                const spacePlaceholder = "  "; // Space to remain visible when words are deleted
+                const spacePlaceholder = " "; // Space to remain visible when words are deleted
             
                 function textLoop() {
                   if (!isDeleting) {
