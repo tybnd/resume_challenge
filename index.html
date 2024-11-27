@@ -395,7 +395,7 @@
                 
             </div>
             <script>
-                let words = [" DevOps Engineer ", " Cloud Engineer "];
+                let words = ["DevOps Engineer", "Cloud Engineer"];
                 let currentWordIndex = 0;
                 let currentCharIndex = 0;
                 let textElement = document.querySelector(".text1");
@@ -404,7 +404,7 @@
                 function typeEffect() {
                     if (!isDeleting) {
                         // Typing effect: add one letter at a time
-                        textElement.textContent = words[currentWordIndex].slice(0, currentCharIndex);
+                        textElement.textContent = words[currentWordIndex].slice(0, currentCharIndex) + "_"; // Add placeholder
                         currentCharIndex++;
 
                         if (currentCharIndex === words[currentWordIndex].length) {
@@ -416,13 +416,14 @@
                         }
                     } else {
                         // Deleting effect: remove one letter at a time
-                        textElement.textContent = words[currentWordIndex].slice(0, currentCharIndex);
+                        textElement.textContent = words[currentWordIndex].slice(0, currentCharIndex) + "_"; // Add placeholder
                         currentCharIndex--;
 
-                        if (currentCharIndex === 0) {
-                            // Once deleted, switch to the next word
+                        if (currentCharIndex < 0) {
+                            // Once completely deleted, switch to the next word
                             isDeleting = false;
                             currentWordIndex = (currentWordIndex + 1) % words.length;
+                            textElement.textContent = "_"; // Keep the placeholder while waiting to type
                             setTimeout(typeEffect, 500); // Pause briefly before typing the next word
                         } else {
                             setTimeout(typeEffect, 50); // Delete faster at 50ms per character
