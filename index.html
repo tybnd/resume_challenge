@@ -88,36 +88,28 @@
     font-size: 14px;
   }
 }   
-    #type {
-        font-family: Arial, sans-serif;
-        color: #e8eaeb;
-        display: inline-block;
-        min-width: 0; /* Don't enforce min-width */
-        white-space: nowrap; /* Prevent wrapping text by default */
-        border-right: 4px solid #e8eaeb; /* Cursor effect */
-        text-align: center; /* Ensure text is centered */
-        font-size: 52px;
-        visibility: hidden; /* Initially hidden */
-        max-width: 90%; /* Prevent overflow */
+#type {
+      font-family: Arial, sans-serif;
+      color: #e8eaeb;
+      display: inline-block;
+      min-width: 0; /* Don't enforce min-width */
+      white-space: nowrap; /* Prevent wrapping text by default */
+      border-right: 4px solid #e8eaeb; /* Cursor effect */
+      text-align: center; /* Ensure text is centered */
+      font-size: 52px;
+      visibility: hidden; /* Initially hidden */
     }
-        
 
     /* Responsive font size for mobile devices */
     @media (max-width: 600px) {
       #type {
         font-size: 32px; /* Smaller font size for mobile */
-        max-width: 80%; /* Adjust max-width to allow for wrapping */
-      }
-      /* Force word break on mobile */
-      .mobile-break {
-        white-space: normal; /* Allow line breaks */
       }
     }
 
     @media (max-width: 400px) {
       #type {
         font-size: 24px; /* Further reduce font size for very small screens */
-        max-width: 90%; /* Keep a more flexible width on very small screens */
       }
     }
 
@@ -429,7 +421,7 @@
                 
             </div>
             <script>
-                const words = ["DevOps<br>Engineer", "Cloud<br>Engineer"]; // Words with line breaks for mobile
+                const words = ["DevOps Engineer", "Cloud Engineer"]; // Words without trailing spaces
                 let wordIndex = 0; // Tracks the current word
                 let charIndex = 0; // Tracks the current character within the word
                 let currentWord = words[wordIndex].split(""); // Current word as an array
