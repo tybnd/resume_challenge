@@ -98,7 +98,12 @@
         min-width: 0; /* Don't enforce min-width */
         max-width: 90%; /* Prevent text overflow */
         }
-
+    .cursor {
+      display: inline-block;
+      width: 10px;
+      background-color: #e8eaeb;
+      animation: blink 1s step-end infinite;
+    }
     /* Responsive font size for mobile devices */
     @media (max-width: 600px) {
       #type {
@@ -430,7 +435,7 @@
                 let isDeleting = false; // Flag to determine typing or deleting
                 const typeElement = document.getElementById("type"); // Target element
                 const typingSpeed = 70; // Speed of typing and deleting
-                const spacePlaceholder = "&nbsp;"; // Space to remain visible when words are deleted
+                const cursor = "<span class='cursor'></span>"; 
             
                 function textLoop() {
                   if (!isDeleting) {
