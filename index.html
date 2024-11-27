@@ -89,6 +89,14 @@
   }
 }   
 
+    #type {
+        font-family: Arial, sans-serif;
+        font-size: 52px;
+        color: #e8eaeb;
+        white-space: nowrap;
+        border-right: 4px solid #e8eaeb; /* Cursor effect */
+        }
+
         </style>
     </head>
     <!-- END HEAD -->
@@ -154,7 +162,7 @@
                             <!-- Larger font size for Name -->
                             <h1 class="promo-block-title" style="color: #e8eaeb; font-size: 96px; font-weight: bold;">Hi, I'm Tyler</h1> 
                             
-                            <h2 class="text1" style="font-size: 52px; color: #e8eaeb;"></h2>
+                            <h2 class="text1" style="font-size: 52px; color: #e8eaeb;" id="type"></h2>
    
                          
                             <p id="replaceme" style="font-size: 48px; color: #e8eaeb;">Welcome to My Site!</p>
@@ -395,55 +403,45 @@
                 
             </div>
             <script>
-            let words = [" DevOps Engineer ", " Cloud Engineer "]; // Words with spaces for consistent layout
-            let currentWordIndex = 0;
-            let currentCharIndex = 0;
-            let textElement = document.querySelector(".text1");
-            let isDeleting = false;
-
-            function typeEffect() {
-                // Placeholder to maintain space
-                const placeholder = "|";
-
-                if (!isDeleting) {
-                    // Typing effect: add one letter at a time
-                    textElement.textContent = words[currentWordIndex].slice(0, currentCharIndex) + placeholder;
-                    currentCharIndex++;
-
-                    if (currentCharIndex === words[currentWordIndex].length) {
-                        // Full word typed, pause briefly before starting to delete
-                        setTimeout(() => {
-                            isDeleting = true;
-                            typeEffect();
-                        }, 1000); // Hold the full word for 1000ms
-                    } else {
-                        setTimeout(typeEffect, 100); // Continue typing at 100ms per character
+                const words = ["DevOps Engineer", "Cloud Engineer"];
+                let wordIndex = 0; // Tracks the current word
+                let charIndex = 0; // Tracks the current character within the word
+                let currentWord = words[wordIndex].split(""); // Current word as an array
+                let isDeleting = false; // Flag to determine typing or deleting
+                const typeElement = document.getElementById("type"); // Target element
+                const typingSpeed = 70; // Speed of typing and deleting
+            
+                function textLoop() {
+                  if (!isDeleting) {
+                    // Typing Phase
+                    typeElement.innerHTML += currentWord[charIndex];
+                    charIndex++;
+            
+                    if (charIndex === currentWord.length) {
+                      // Once the word is fully typed, switch to deleting after a delay
+                      isDeleting = true;
+                      setTimeout(textLoop, 1000); // Pause after typing the word
+                      return;
                     }
-                } else {
-                    // Deleting effect: remove one letter at a time
-                    textElement.textContent = words[currentWordIndex].slice(0, currentCharIndex) + placeholder;
-                    currentCharIndex--;
-
-                    if (currentCharIndex < 0) {
-                        // Once completely deleted, switch to the next word
-                        isDeleting = false;
-                        currentWordIndex = (currentWordIndex + 1) % words.length;
-                        textElement.textContent = placeholder; // Keep placeholder visible
-                        setTimeout(typeEffect, 500); // Pause briefly before typing the next word
-                    } else {
-                        setTimeout(typeEffect, 50); // Delete faster at 50ms per character
+                  } else {
+                    // Deleting Phase
+                    currentWord.pop(); // Remove the last character
+                    typeElement.innerHTML = currentWord.join("");
+            
+                    if (currentWord.length === 0) {
+                      // Once the word is fully deleted, switch to the next word
+                      isDeleting = false;
+                      wordIndex = (wordIndex + 1) % words.length; // Cycle through words
+                      currentWord = words[wordIndex].split(""); // Reset current word
+                      charIndex = 0; // Reset character index
                     }
+                  }
+            
+                  setTimeout(textLoop, typingSpeed); // Adjust speed between typing/deleting
                 }
-            }
-
-            document.addEventListener("DOMContentLoaded", () => {
-                // Start with just the placeholder and hide the element until animation begins
-                textElement.textContent = "|"; // Initialize with only the placeholder
-                textElement.style.visibility = "visible"; // Reveal the element only when ready
-                typeEffect(); // Start the typing and deleting effect
-            });
-
-        </script>
+            
+                textLoop(); // Start the loop
+              </script>
         </footer>
         <!-- End Footer -->
 
