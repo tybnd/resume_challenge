@@ -89,6 +89,7 @@
   }
 }
 
+/* Keyframes for typing animation */
 @keyframes typing {
     0% { width: 0; opacity: 1; }
     100% { width: 100%; opacity: 1; }
@@ -107,30 +108,30 @@
     100% { border-color: transparent; }
 }
 
-    /* Container for the animated text */
+/* Container for the animated text */
     .animated-text {
-        position: relative; /* Allow absolute positioning of the text */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh; /* Full viewport height */
+        position: relative;
+        display: inline-block;
         text-align: center;
-        width: 100%; /* Ensure the container stretches full width */
+        width: 100%;
+        height: 100vh; /* Full viewport height */
+        top: 50%;
+        transform: translateY(-50%); /* Center vertically */
     }
 
     /* Base styling for both h2 elements (text) */
     .animated-text h2 {
-        position: absolute; /* Ensure both text elements are stacked on top of each other */
-        margin: 0; /* Remove extra space around text */
-        opacity: 0; /* Start hidden */
-        white-space: nowrap; /* Prevent text wrapping */
-        overflow: hidden; /* Hide the overflow during animation */
+        display: inline-block;
+        white-space: nowrap;
+        overflow: hidden;
+        opacity: 0; /* Initially hidden */
+        width: 0; /* Start with width 0 for typing effect */
+        margin: 0;
         border-right: 3px solid #e8eaeb; /* Blinking cursor */
     }
 
     /* Animation for the first text (DevOps Engineer) */
     .text1 {
-        opacity: 1;
         animation: typing 2s steps(16) 0s 1 normal forwards,  /* Typing effect */
                 deleting 1.5s steps(16) 4s 1 normal forwards, /* Deleting effect */
                 blink 0.75s step-end infinite 4.5s; /* Blinking cursor */
@@ -138,16 +139,10 @@
 
     /* Animation for the second text (Cloud Engineer) */
     .text2 {
-        opacity: 0; /* Initially hidden */
         animation: typing 2s steps(16) 6s 1 normal forwards,  /* Typing effect */
                 deleting 1.5s steps(16) 9.5s 1 normal forwards, /* Deleting effect */
                 blink 0.75s step-end infinite 9s; /* Blinking cursor */
         animation-fill-mode: forwards; /* Ensures text stays visible after typing */
-    }
-
-    /* Ensure smooth text transitions */
-    .animated-text h2 {
-        animation: blink 0.75s step-end infinite;
     }
 
 
