@@ -91,14 +91,14 @@
 
 /* Keyframes for typing animation */
 @keyframes typing {
-    0% { width: 0; opacity: 1; }
-    100% { width: 100%; opacity: 1; }
+    0% { width: 0; }
+    100% { width: 100%; }
 }
 
 /* Keyframes for deleting animation */
 @keyframes deleting {
-    0% { width: 100%; opacity: 1; }
-    100% { width: 0; opacity: 0; }
+    0% { width: 100%; }
+    100% { width: 0; }
 }
 
 /* Keyframes for blinking cursor effect */
@@ -123,24 +123,29 @@
         white-space: nowrap;
         overflow: hidden;
         border-right: 3px solid #e8eaeb; /* Blinking cursor */
+        margin: 0; /* Remove extra space around text */
     }
 
     /* Animation for the first text (DevOps Engineer) */
     .text1 {
-        display: inline-block;
         opacity: 1;
         animation: typing 2s steps(16) 0s 1 normal forwards,  /* Typing effect */
-                deleting 1.5s steps(16) 3s 1 normal forwards, /* Deleting effect */
+                deleting 1.5s steps(16) 4s 1 normal forwards, /* Deleting effect */
                 blink 0.75s step-end infinite 4.5s; /* Blinking cursor */
     }
 
     /* Animation for the second text (Cloud Engineer) */
     .text2 {
-        display: inline-block;
         opacity: 0; /* Initially hidden */
         animation: typing 2s steps(16) 6s 1 normal forwards,  /* Typing effect */
-                blink 0.75s step-end infinite 8s; /* Blinking cursor */
+                deleting 1.5s steps(16) 9.5s 1 normal forwards, /* Deleting effect */
+                blink 0.75s step-end infinite 9s; /* Blinking cursor */
         animation-fill-mode: forwards; /* Ensures text stays visible after typing */
+    }
+
+    /* Animation for alternating between DevOps and Cloud text */
+    .animated-text h2 {
+        animation: blink 0.75s step-end infinite;
     }
 
 
