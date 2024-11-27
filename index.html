@@ -88,28 +88,31 @@
     font-size: 14px;
   }
 }   
-#type {
-      font-family: Arial, sans-serif;
-      color: #e8eaeb;
-      display: inline-block;
-      min-width: 0; /* Don't enforce min-width */
-      white-space: nowrap; /* Prevent wrapping text by default */
-      border-right: 4px solid #e8eaeb; /* Cursor effect */
-      text-align: center; /* Ensure text is centered */
-      font-size: 52px;
-      visibility: hidden; /* Initially hidden */
-    }
+    #type {
+        color: #e8eaeb;
+        display: inline-block;
+        text-align: center; /* Ensure text is centered */
+        font-size: 52px;
+        visibility: hidden; /* Initially hidden */
+        white-space: nowrap; /* Prevent text from wrapping */
+        border-right: 4px solid #e8eaeb; /* Cursor effect */
+        min-width: 0; /* Don't enforce min-width */
+        max-width: 90%; /* Prevent text overflow */
+        }
 
     /* Responsive font size for mobile devices */
     @media (max-width: 600px) {
       #type {
         font-size: 32px; /* Smaller font size for mobile */
+        max-width: 80%; /* Limit max width on smaller screens */
+        white-space: normal; /* Allow word wrapping on mobile */
       }
     }
 
     @media (max-width: 400px) {
       #type {
         font-size: 24px; /* Further reduce font size for very small screens */
+        max-width: 90%; /* Keep a more flexible width on very small screens */
       }
     }
 
