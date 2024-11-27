@@ -90,12 +90,31 @@
 }   
     #type {
         font-family: Arial, sans-serif;
-        font-size: 52px;
         color: #e8eaeb;
-        white-space: nowrap;
+        white-space: pre-wrap; /* Allows wrapping including line breaks */
         display: inline-block;
-        min-width: 300px; /* Ensures consistent space for the text */
+        min-width: 200px; /* Ensure minimum width */
         }
+
+    /* Responsive font size for mobile devices */
+    @media (max-width: 600px) {
+      #type {
+        font-size: 32px; /* Smaller font size for mobile */
+        min-width: 120px; /* Reduce the minimum width for smaller screens */
+      }
+    }
+
+    @media (max-width: 400px) {
+      #type {
+        font-size: 24px; /* Further reduce font size for very small screens */
+        min-width: 100px; /* Adjust minimum width even more */
+      }
+    }
+
+    /* Default font size */
+    #type {
+      font-size: 52px;
+    }
 
         </style>
     </head>
@@ -403,10 +422,10 @@
                 
             </div>
             <script>
-                const words = ["DevOps <br> Engineer ", "Cloud <br> Engineer "]; // Use <br> for line breaks
+                const words = ["DevOps <br> Engineer", "Cloud <br> Engineer"]; // Words with line breaks
                 let wordIndex = 0; // Tracks the current word
                 let charIndex = 0; // Tracks the current character within the word
-                let currentWord = words[wordIndex].split(""); // Current word as an array
+                let currentWord = words[wordIndex].split(/(<br>)/); // Split the word at <br> without removing it
                 let isDeleting = false; // Flag to determine typing or deleting
                 const typeElement = document.getElementById("type"); // Target element
                 const typingSpeed = 70; // Speed of typing and deleting
@@ -433,7 +452,7 @@
                       // Once the word is fully deleted, switch to the next word
                       isDeleting = false;
                       wordIndex = (wordIndex + 1) % words.length; // Cycle through words
-                      currentWord = words[wordIndex].split(""); // Reset current word
+                      currentWord = words[wordIndex].split(/(<br>)/); // Reset current word with line breaks
                       charIndex = 0; // Reset character index
                     }
                   }
