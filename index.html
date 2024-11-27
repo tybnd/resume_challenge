@@ -89,8 +89,6 @@
   }
 }
 
-/* Keyframes for typing animation */
-/* Keyframes for typing animation */
 @keyframes typing {
     0% { width: 0; opacity: 1; }
     100% { width: 100%; opacity: 1; }
@@ -111,6 +109,7 @@
 
     /* Container for the animated text */
     .animated-text {
+        position: relative; /* Allow absolute positioning of the text */
         display: flex;
         justify-content: center;
         align-items: center;
@@ -121,11 +120,12 @@
 
     /* Base styling for both h2 elements (text) */
     .animated-text h2 {
-        display: inline-block;
-        white-space: nowrap;
-        overflow: hidden;
-        border-right: 3px solid #e8eaeb; /* Blinking cursor */
+        position: absolute; /* Ensure both text elements are stacked on top of each other */
         margin: 0; /* Remove extra space around text */
+        opacity: 0; /* Start hidden */
+        white-space: nowrap; /* Prevent text wrapping */
+        overflow: hidden; /* Hide the overflow during animation */
+        border-right: 3px solid #e8eaeb; /* Blinking cursor */
     }
 
     /* Animation for the first text (DevOps Engineer) */
@@ -149,6 +149,7 @@
     .animated-text h2 {
         animation: blink 0.75s step-end infinite;
     }
+
 
 
 
