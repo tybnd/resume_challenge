@@ -154,7 +154,7 @@
                             <!-- Larger font size for Name -->
                             <h1 class="promo-block-title" style="color: #e8eaeb; font-size: 96px; font-weight: bold;">Hi, I'm Tyler</h1> 
                             
-                            <h2 class="text1" style="font-size: 52px; color: #e8eaeb;"></h2>
+                            <h2 class="text1" style="font-size: 52px; color: #e8eaeb;">DevOps Engineer</h2>
    
                          
                             <p id="replaceme" style="font-size: 48px; color: #e8eaeb;">Welcome to My Site!</p>
@@ -236,7 +236,7 @@
                         <i class="service-icon color-black icon-cloud-upload"></i>
                     </div>
                     <div class="service-info">
-                        <h3 style="font-size: 22px;color: #e8eaeb;">Cloud Engineer (In-Training)</h3>
+                        <h3 style="font-size: 22px;color: #e8eaeb;">Cloud Engineer</h3>
                         <p class="margin-b-5" style="font-size: 18px;">Focused on developing cloud solutions using AWS, with hands-on experience in serverless architecture and Python for automating processes.</p>
                     </div>
                 </div>
@@ -400,44 +400,40 @@
                 let currentCharIndex = 0;
                 let textElement = document.querySelector(".text1");
                 let isDeleting = false;
-            
+
                 function typeEffect() {
                     if (!isDeleting) {
                         // Typing effect: add one letter at a time
                         textElement.textContent = words[currentWordIndex].slice(0, currentCharIndex);
                         currentCharIndex++;
-            
-                        // Speed up the typing for the last letter so it doesn't take too long
-                        let typingSpeed = currentCharIndex === words[currentWordIndex].length ? 250 : 150; // Typing speed, faster last letter
-            
+
                         if (currentCharIndex === words[currentWordIndex].length) {
-                            // Pause before starting to delete (after the full word is typed)
+                            // Full word typed, pause before starting to delete
                             isDeleting = true;
-                            setTimeout(typeEffect, 1200); // Longer wait before deleting to hold the word
+                            setTimeout(typeEffect, 1000); // Hold the full word for 1000ms
                         } else {
-                            // Continue typing
-                            setTimeout(typeEffect, typingSpeed);
+                            setTimeout(typeEffect, 100); // Continue typing at 100ms per character
                         }
                     } else {
                         // Deleting effect: remove one letter at a time
                         textElement.textContent = words[currentWordIndex].slice(0, currentCharIndex);
                         currentCharIndex--;
-            
+
                         if (currentCharIndex === 0) {
                             // Once deleted, switch to the next word
                             isDeleting = false;
                             currentWordIndex = (currentWordIndex + 1) % words.length;
-                            setTimeout(typeEffect, 500); // Wait before typing the next word
+                            setTimeout(typeEffect, 500); // Pause briefly before typing the next word
                         } else {
-                            // Continue deleting
-                            setTimeout(typeEffect, 100);
+                            setTimeout(typeEffect, 50); // Delete faster at 50ms per character
                         }
                     }
                 }
-            
+
                 document.addEventListener("DOMContentLoaded", () => {
                     typeEffect(); // Start the typing and deleting effect
                 });
+
               </script>
             
         </footer>
