@@ -101,28 +101,26 @@
         max-width: 90%; /* Prevent overflow */
         }
 
-        /* Responsive font size for mobile devices */
-        @media (max-width: 600px) {
-        #type {
-            font-size: 32px; /* Smaller font size for mobile */
-            max-width: 80%; /* Adjust max-width to allow for wrapping */
-        }
-        }
+    /* Responsive font size for mobile devices */
+    @media (max-width: 600px) {
+      #type {
+        font-size: 32px; /* Smaller font size for mobile */
+        min-width: 120px; /* Reduce the minimum width for smaller screens */
+      }
+    }
 
-        @media (max-width: 400px) {
-        #type {
-            font-size: 24px; /* Further reduce font size for very small screens */
-            max-width: 90%; /* Keep a more flexible width on very small screens */
-        }
-        }
+    @media (max-width: 400px) {
+      #type {
+        font-size: 24px; /* Further reduce font size for very small screens */
+        min-width: 100px; /* Adjust minimum width even more */
+      }
+    }
 
-        /* Make the text properly center on smaller screens */
-        .container {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        }
+    /* Default font size */
+    #type {
+      font-size: 52px;
+    }
+
         </style>
     </head>
     <!-- END HEAD -->
