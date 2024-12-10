@@ -189,10 +189,6 @@
       items.forEach(item => {
         const row = document.createElement("tr");
 
-        const idCell = document.createElement("td");
-        idCell.innerHTML = truncateText(item.ID, 20);
-        row.appendChild(idCell);
-
         const typeCell = document.createElement("td");
         typeCell.textContent = item.Type;
         row.appendChild(typeCell);
