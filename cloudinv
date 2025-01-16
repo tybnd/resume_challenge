@@ -58,7 +58,7 @@
 
     /* Card container */
     .card {
-      background-color: #1e293b;
+      background-color: #0d0e0f;
       padding: 40px 20px; /* Added top and bottom padding */
       border-radius: 4px;
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
